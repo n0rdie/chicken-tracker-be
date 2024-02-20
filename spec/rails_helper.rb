@@ -78,3 +78,10 @@ SimpleCov.start "rails" do
   add_filter "app/jobs/"
   add_filter "app/channels/"
 end
+
+Shoulda::Matchers.configure do |config|
+  config.integrate do |with|
+    with.test_framework :rspec
+    with.library :rails
+  end
+end
