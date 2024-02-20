@@ -1,4 +1,10 @@
 # chicken-tracker
+## Setup
+1. `git clone <repo_name>`
+2. `cd <repo_name>`
+3. `bundle install`
+4. `rails db:{drop,create,migrate,seed}`
+
 ## User Stories
 
 ```
