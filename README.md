@@ -6,7 +6,7 @@
 4. `rails db:{drop,create,migrate,seed}`
 
 ## User Stories
-
+## Users
 ```
 Story 1
 Welcome Page
@@ -37,6 +37,7 @@ Sign In
 
 <unapplicable>
 ```
+## Shelters
 ```
 Story 6
 Sign In [SAD] -- Wrong sign in information
