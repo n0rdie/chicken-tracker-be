@@ -37,13 +37,13 @@ Sign In
 
 <unapplicable>
 ```
-## Shelters
 ```
 Story 6
 Sign In [SAD] -- Wrong sign in information
 
 <unapplicable>
 ```
+## Shelters
 ```
 Story 7
 Create Shelter
