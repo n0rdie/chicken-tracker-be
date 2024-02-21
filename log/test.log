@@ -1454,3 +1454,1585 @@ Completed 200 OK in 2ms (Views: 0.0ms | ActiveRecord: 0.6ms | Allocations: 1724)
   [1m[36mShelter Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
   [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" ORDER BY "shelters"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
   [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Load (2.8ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mShelter Count (1.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+Started POST "/api/v1/shelters" for 127.0.0.1 at 2024-02-21 13:22:34 -0700
+Processing by Api::V1::SheltersController#create as HTML
+  Parameters: {"shelter"=>{"name"=>"Red Barn"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Create (1.3ms)[0m  [1m[32mINSERT INTO "shelters" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Red Barn"], ["created_at", "2024-02-21 20:22:34.783663"], ["updated_at", "2024-02-21 20:22:34.783663"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 1.7ms | Allocations: 5952)
+  [1m[36mShelter Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" ORDER BY "shelters"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/shelters" for 127.0.0.1 at 2024-02-21 13:22:34 -0700
+Processing by Api::V1::SheltersController#create as HTML
+  Parameters: {"shelter"=>{"name"=>"Red Barn"}}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Create (0.2ms)[0m  [1m[32mINSERT INTO "shelters" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Red Barn"], ["created_at", "2024-02-21 20:22:34.789580"], ["updated_at", "2024-02-21 20:22:34.789580"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 1ms (Views: 0.0ms | ActiveRecord: 0.3ms | Allocations: 597)
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" ORDER BY "shelters"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mShelter Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+Started PATCH "/api/v1/shelters/21" for 127.0.0.1 at 2024-02-21 13:22:34 -0700
+Processing by Api::V1::SheltersController#update as HTML
+  Parameters: {"shelter"=>{"name"=>"Blue Coop"}, "id"=>"21"}
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Update (0.8ms)[0m  [1m[33mUPDATE "shelters" SET "name" = $1, "updated_at" = $2 WHERE "shelters"."id" = $3[0m  [["name", "Blue Coop"], ["updated_at", "2024-02-21 20:22:34.792275"], ["id", 21]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 2ms (Views: 0.0ms | ActiveRecord: 0.9ms | Allocations: 1724)
+  [1m[36mShelter Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" ORDER BY "shelters"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Load (2.8ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mShelter Count (15.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+Started POST "/api/v1/shelters" for 127.0.0.1 at 2024-02-21 14:24:08 -0700
+Processing by Api::V1::SheltersController#create as HTML
+  Parameters: {"shelter"=>{"name"=>"Red Barn"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Create (2.3ms)[0m  [1m[32mINSERT INTO "shelters" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Red Barn"], ["created_at", "2024-02-21 21:24:08.880592"], ["updated_at", "2024-02-21 21:24:08.880592"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 8ms (Views: 0.1ms | ActiveRecord: 2.7ms | Allocations: 5952)
+  [1m[36mShelter Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+  [1m[36mShelter Load (0.2ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" ORDER BY "shelters"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/shelters" for 127.0.0.1 at 2024-02-21 14:24:08 -0700
+Processing by Api::V1::SheltersController#create as HTML
+  Parameters: {"shelter"=>{"name"=>"Red Barn"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Create (0.4ms)[0m  [1m[32mINSERT INTO "shelters" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Red Barn"], ["created_at", "2024-02-21 21:24:08.888540"], ["updated_at", "2024-02-21 21:24:08.888540"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 1ms (Views: 0.0ms | ActiveRecord: 0.5ms | Allocations: 597)
+  [1m[36mShelter Load (0.2ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" ORDER BY "shelters"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mShelter Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+Started PATCH "/api/v1/shelters/23" for 127.0.0.1 at 2024-02-21 14:24:08 -0700
+Processing by Api::V1::SheltersController#update as HTML
+  Parameters: {"shelter"=>{"name"=>"Blue Coop"}, "id"=>"23"}
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Update (1.0ms)[0m  [1m[33mUPDATE "shelters" SET "name" = $1, "updated_at" = $2 WHERE "shelters"."id" = $3[0m  [["name", "Blue Coop"], ["updated_at", "2024-02-21 21:24:08.891819"], ["id", 23]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 3ms (Views: 0.0ms | ActiveRecord: 1.3ms | Allocations: 1724)
+  [1m[36mShelter Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" ORDER BY "shelters"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/shelters" for 127.0.0.1 at 2024-02-21 14:24:08 -0700
+Processing by Api::V1::SheltersController#create as HTML
+  Parameters: {"shelter"=>{"name"=>"Red Barn"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Create (0.4ms)[0m  [1m[32mINSERT INTO "shelters" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Red Barn"], ["created_at", "2024-02-21 21:24:08.894944"], ["updated_at", "2024-02-21 21:24:08.894944"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 1ms (Views: 0.0ms | ActiveRecord: 0.5ms | Allocations: 594)
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" ORDER BY "shelters"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mShelter Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+Started POST "/api/v1/shelters/24/animals" for 127.0.0.1 at 2024-02-21 14:24:08 -0700
+  
+ActionController::RoutingError (No route matches [POST] "/api/v1/shelters/24/animals"):
+  
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mShelter Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+Started POST "/api/v1/shelters" for 127.0.0.1 at 2024-02-21 14:24:09 -0700
+Processing by Api::V1::SheltersController#create as HTML
+  Parameters: {"shelter"=>{"name"=>"Red Barn"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Create (0.3ms)[0m  [1m[32mINSERT INTO "shelters" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Red Barn"], ["created_at", "2024-02-21 21:24:09.014668"], ["updated_at", "2024-02-21 21:24:09.014668"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 594)
+  [1m[36mShelter Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" ORDER BY "shelters"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/shelters" for 127.0.0.1 at 2024-02-21 14:24:09 -0700
+Processing by Api::V1::SheltersController#create as HTML
+  Parameters: {"shelter"=>{"name"=>"Red Barn"}}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Create (0.2ms)[0m  [1m[32mINSERT INTO "shelters" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Red Barn"], ["created_at", "2024-02-21 21:24:09.016906"], ["updated_at", "2024-02-21 21:24:09.016906"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 1ms (Views: 0.0ms | ActiveRecord: 0.2ms | Allocations: 593)
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" ORDER BY "shelters"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mShelter Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+Started PATCH "/api/v1/shelters/26" for 127.0.0.1 at 2024-02-21 14:24:09 -0700
+Processing by Api::V1::SheltersController#update as HTML
+  Parameters: {"shelter"=>{"name"=>"Blue Coop"}, "id"=>"26"}
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 26], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Update (0.2ms)[0m  [1m[33mUPDATE "shelters" SET "name" = $1, "updated_at" = $2 WHERE "shelters"."id" = $3[0m  [["name", "Blue Coop"], ["updated_at", "2024-02-21 21:24:09.018663"], ["id", 26]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 643)
+  [1m[36mShelter Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" ORDER BY "shelters"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mShelter Count (12.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+Started POST "/api/v1/shelters" for 127.0.0.1 at 2024-02-21 14:26:34 -0700
+Processing by Api::V1::SheltersController#create as HTML
+  Parameters: {"shelter"=>{"name"=>"Red Barn"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Create (25.9ms)[0m  [1m[32mINSERT INTO "shelters" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Red Barn"], ["created_at", "2024-02-21 21:26:34.367851"], ["updated_at", "2024-02-21 21:26:34.367851"]]
+  [1m[36mTRANSACTION (6.5ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 58ms (Views: 1.4ms | ActiveRecord: 32.4ms | Allocations: 5952)
+  [1m[36mShelter Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+  [1m[36mShelter Load (0.2ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" ORDER BY "shelters"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/shelters" for 127.0.0.1 at 2024-02-21 14:26:34 -0700
+Processing by Api::V1::SheltersController#create as HTML
+  Parameters: {"shelter"=>{"name"=>"Red Barn"}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Create (2.2ms)[0m  [1m[32mINSERT INTO "shelters" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Red Barn"], ["created_at", "2024-02-21 21:26:34.452737"], ["updated_at", "2024-02-21 21:26:34.452737"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 5ms (Views: 0.4ms | ActiveRecord: 2.4ms | Allocations: 597)
+  [1m[36mShelter Load (1.8ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" ORDER BY "shelters"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mShelter Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+Started PATCH "/api/v1/shelters/28" for 127.0.0.1 at 2024-02-21 14:26:34 -0700
+Processing by Api::V1::SheltersController#update as HTML
+  Parameters: {"shelter"=>{"name"=>"Blue Coop"}, "id"=>"28"}
+  [1m[36mShelter Load (0.5ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Update (19.2ms)[0m  [1m[33mUPDATE "shelters" SET "name" = $1, "updated_at" = $2 WHERE "shelters"."id" = $3[0m  [["name", "Blue Coop"], ["updated_at", "2024-02-21 21:26:34.495558"], ["id", 28]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 27ms (Views: 0.2ms | ActiveRecord: 19.9ms | Allocations: 1724)
+  [1m[36mShelter Count (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+  [1m[36mShelter Load (0.2ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" ORDER BY "shelters"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/shelters" for 127.0.0.1 at 2024-02-21 14:26:34 -0700
+Processing by Api::V1::SheltersController#create as HTML
+  Parameters: {"shelter"=>{"name"=>"Red Barn"}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Create (1.0ms)[0m  [1m[32mINSERT INTO "shelters" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Red Barn"], ["created_at", "2024-02-21 21:26:34.537164"], ["updated_at", "2024-02-21 21:26:34.537164"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 20ms (Views: 1.3ms | ActiveRecord: 2.3ms | Allocations: 594)
+  [1m[36mShelter Load (2.5ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" ORDER BY "shelters"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mShelter Count (2.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+Started POST "/api/v1/shelters/29/animals" for 127.0.0.1 at 2024-02-21 14:26:34 -0700
+Processing by Api::V1::AnimalsController#create as HTML
+  Parameters: {"animal"=>{"name"=>"Huck"}, "shelter_id"=>"29"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 500)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mShelter Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+Started POST "/api/v1/shelters" for 127.0.0.1 at 2024-02-21 14:26:34 -0700
+Processing by Api::V1::SheltersController#create as HTML
+  Parameters: {"shelter"=>{"name"=>"Red Barn"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Create (0.4ms)[0m  [1m[32mINSERT INTO "shelters" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Red Barn"], ["created_at", "2024-02-21 21:26:34.576280"], ["updated_at", "2024-02-21 21:26:34.576280"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.5ms | Allocations: 594)
+  [1m[36mShelter Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+  [1m[36mShelter Load (0.2ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" ORDER BY "shelters"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/shelters" for 127.0.0.1 at 2024-02-21 14:26:34 -0700
+Processing by Api::V1::SheltersController#create as HTML
+  Parameters: {"shelter"=>{"name"=>"Red Barn"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Create (0.6ms)[0m  [1m[32mINSERT INTO "shelters" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Red Barn"], ["created_at", "2024-02-21 21:26:34.581468"], ["updated_at", "2024-02-21 21:26:34.581468"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.8ms | Allocations: 594)
+  [1m[36mShelter Load (0.2ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" ORDER BY "shelters"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mShelter Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+Started PATCH "/api/v1/shelters/31" for 127.0.0.1 at 2024-02-21 14:26:34 -0700
+Processing by Api::V1::SheltersController#update as HTML
+  Parameters: {"shelter"=>{"name"=>"Blue Coop"}, "id"=>"31"}
+  [1m[36mShelter Load (0.3ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 31], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Update (0.9ms)[0m  [1m[33mUPDATE "shelters" SET "name" = $1, "updated_at" = $2 WHERE "shelters"."id" = $3[0m  [["name", "Blue Coop"], ["updated_at", "2024-02-21 21:26:34.587317"], ["id", 31]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 1.6ms | Allocations: 642)
+  [1m[36mShelter Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" ORDER BY "shelters"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mShelter Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+Started POST "/api/v1/shelters" for 127.0.0.1 at 2024-02-21 14:26:55 -0700
+Processing by Api::V1::SheltersController#create as HTML
+  Parameters: {"shelter"=>{"name"=>"Red Barn"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Create (12.6ms)[0m  [1m[32mINSERT INTO "shelters" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Red Barn"], ["created_at", "2024-02-21 21:26:55.186914"], ["updated_at", "2024-02-21 21:26:55.186914"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 18ms (Views: 0.1ms | ActiveRecord: 12.8ms | Allocations: 5952)
+  [1m[36mShelter Count (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" ORDER BY "shelters"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/shelters" for 127.0.0.1 at 2024-02-21 14:26:55 -0700
+Processing by Api::V1::SheltersController#create as HTML
+  Parameters: {"shelter"=>{"name"=>"Red Barn"}}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Create (0.2ms)[0m  [1m[32mINSERT INTO "shelters" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Red Barn"], ["created_at", "2024-02-21 21:26:55.205900"], ["updated_at", "2024-02-21 21:26:55.205900"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 597)
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" ORDER BY "shelters"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mShelter Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+Started PATCH "/api/v1/shelters/33" for 127.0.0.1 at 2024-02-21 14:26:55 -0700
+Processing by Api::V1::SheltersController#update as HTML
+  Parameters: {"shelter"=>{"name"=>"Blue Coop"}, "id"=>"33"}
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 33], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Update (0.8ms)[0m  [1m[33mUPDATE "shelters" SET "name" = $1, "updated_at" = $2 WHERE "shelters"."id" = $3[0m  [["name", "Blue Coop"], ["updated_at", "2024-02-21 21:26:55.208837"], ["id", 33]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 3ms (Views: 0.0ms | ActiveRecord: 1.0ms | Allocations: 1724)
+  [1m[36mShelter Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" ORDER BY "shelters"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/shelters" for 127.0.0.1 at 2024-02-21 14:26:55 -0700
+Processing by Api::V1::SheltersController#create as HTML
+  Parameters: {"shelter"=>{"name"=>"Red Barn"}}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Create (0.4ms)[0m  [1m[32mINSERT INTO "shelters" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Red Barn"], ["created_at", "2024-02-21 21:26:55.211480"], ["updated_at", "2024-02-21 21:26:55.211480"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 1ms (Views: 0.0ms | ActiveRecord: 0.8ms | Allocations: 594)
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" ORDER BY "shelters"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mShelter Count (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+Started POST "/api/v1/shelters/34/animals" for 127.0.0.1 at 2024-02-21 14:26:55 -0700
+Processing by Api::V1::AnimalsController#create as HTML
+  Parameters: {"animal"=>{"name"=>"Huck"}, "shelter_id"=>"34"}
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms | Allocations: 545)
+  [1m[36mAnimal Count (1.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "animals"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mShelter Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+Started POST "/api/v1/shelters" for 127.0.0.1 at 2024-02-21 14:26:55 -0700
+Processing by Api::V1::SheltersController#create as HTML
+  Parameters: {"shelter"=>{"name"=>"Red Barn"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Create (0.4ms)[0m  [1m[32mINSERT INTO "shelters" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Red Barn"], ["created_at", "2024-02-21 21:26:55.223572"], ["updated_at", "2024-02-21 21:26:55.223572"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 1ms (Views: 0.0ms | ActiveRecord: 0.5ms | Allocations: 594)
+  [1m[36mShelter Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" ORDER BY "shelters"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (4.7ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/shelters" for 127.0.0.1 at 2024-02-21 14:26:55 -0700
+Processing by Api::V1::SheltersController#create as HTML
+  Parameters: {"shelter"=>{"name"=>"Red Barn"}}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Create (0.2ms)[0m  [1m[32mINSERT INTO "shelters" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Red Barn"], ["created_at", "2024-02-21 21:26:55.230548"], ["updated_at", "2024-02-21 21:26:55.230548"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 1ms (Views: 0.0ms | ActiveRecord: 0.3ms | Allocations: 595)
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" ORDER BY "shelters"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mShelter Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+Started PATCH "/api/v1/shelters/36" for 127.0.0.1 at 2024-02-21 14:26:55 -0700
+Processing by Api::V1::SheltersController#update as HTML
+  Parameters: {"shelter"=>{"name"=>"Blue Coop"}, "id"=>"36"}
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 36], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Update (0.2ms)[0m  [1m[33mUPDATE "shelters" SET "name" = $1, "updated_at" = $2 WHERE "shelters"."id" = $3[0m  [["name", "Blue Coop"], ["updated_at", "2024-02-21 21:26:55.232566"], ["id", 36]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 1ms (Views: 0.0ms | ActiveRecord: 0.3ms | Allocations: 643)
+  [1m[36mShelter Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" ORDER BY "shelters"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mShelter Count (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+Started POST "/api/v1/shelters" for 127.0.0.1 at 2024-02-21 14:27:41 -0700
+Processing by Api::V1::SheltersController#create as HTML
+  Parameters: {"shelter"=>{"name"=>"Red Barn"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Create (11.5ms)[0m  [1m[32mINSERT INTO "shelters" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Red Barn"], ["created_at", "2024-02-21 21:27:41.924168"], ["updated_at", "2024-02-21 21:27:41.924168"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 18ms (Views: 0.2ms | ActiveRecord: 11.7ms | Allocations: 5952)
+  [1m[36mShelter Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" ORDER BY "shelters"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/shelters" for 127.0.0.1 at 2024-02-21 14:27:41 -0700
+Processing by Api::V1::SheltersController#create as HTML
+  Parameters: {"shelter"=>{"name"=>"Red Barn"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Create (0.4ms)[0m  [1m[32mINSERT INTO "shelters" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Red Barn"], ["created_at", "2024-02-21 21:27:41.941929"], ["updated_at", "2024-02-21 21:27:41.941929"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.6ms | Allocations: 597)
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" ORDER BY "shelters"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mShelter Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+Started PATCH "/api/v1/shelters/38" for 127.0.0.1 at 2024-02-21 14:27:41 -0700
+Processing by Api::V1::SheltersController#update as HTML
+  Parameters: {"shelter"=>{"name"=>"Blue Coop"}, "id"=>"38"}
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 38], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Update (0.3ms)[0m  [1m[33mUPDATE "shelters" SET "name" = $1, "updated_at" = $2 WHERE "shelters"."id" = $3[0m  [["name", "Blue Coop"], ["updated_at", "2024-02-21 21:27:41.946125"], ["id", 38]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.5ms | Allocations: 1724)
+  [1m[36mShelter Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+  [1m[36mShelter Load (0.4ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" ORDER BY "shelters"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/shelters" for 127.0.0.1 at 2024-02-21 14:27:41 -0700
+Processing by Api::V1::SheltersController#create as HTML
+  Parameters: {"shelter"=>{"name"=>"Red Barn"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Create (0.7ms)[0m  [1m[32mINSERT INTO "shelters" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Red Barn"], ["created_at", "2024-02-21 21:27:41.948634"], ["updated_at", "2024-02-21 21:27:41.948634"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 1ms (Views: 0.0ms | ActiveRecord: 0.8ms | Allocations: 594)
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" ORDER BY "shelters"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mAnimal Count (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "animals"[0m
+Started POST "/api/v1/shelters/39/animals" for 127.0.0.1 at 2024-02-21 14:27:41 -0700
+Processing by Api::V1::AnimalsController#create as HTML
+  Parameters: {"animal"=>{"name"=>"Huck"}, "shelter_id"=>"39"}
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms | Allocations: 544)
+  [1m[36mAnimal Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "animals"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mShelter Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+Started POST "/api/v1/shelters" for 127.0.0.1 at 2024-02-21 14:27:41 -0700
+Processing by Api::V1::SheltersController#create as HTML
+  Parameters: {"shelter"=>{"name"=>"Red Barn"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Create (0.3ms)[0m  [1m[32mINSERT INTO "shelters" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Red Barn"], ["created_at", "2024-02-21 21:27:41.959290"], ["updated_at", "2024-02-21 21:27:41.959290"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.5ms | Allocations: 594)
+  [1m[36mShelter Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" ORDER BY "shelters"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/shelters" for 127.0.0.1 at 2024-02-21 14:27:41 -0700
+Processing by Api::V1::SheltersController#create as HTML
+  Parameters: {"shelter"=>{"name"=>"Red Barn"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Create (0.4ms)[0m  [1m[32mINSERT INTO "shelters" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Red Barn"], ["created_at", "2024-02-21 21:27:41.968519"], ["updated_at", "2024-02-21 21:27:41.968519"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.6ms | Allocations: 595)
+  [1m[36mShelter Load (0.2ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" ORDER BY "shelters"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mShelter Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+Started PATCH "/api/v1/shelters/41" for 127.0.0.1 at 2024-02-21 14:27:41 -0700
+Processing by Api::V1::SheltersController#update as HTML
+  Parameters: {"shelter"=>{"name"=>"Blue Coop"}, "id"=>"41"}
+  [1m[36mShelter Load (0.2ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 41], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Update (0.2ms)[0m  [1m[33mUPDATE "shelters" SET "name" = $1, "updated_at" = $2 WHERE "shelters"."id" = $3[0m  [["name", "Blue Coop"], ["updated_at", "2024-02-21 21:27:41.971412"], ["id", 41]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 1ms (Views: 0.0ms | ActiveRecord: 0.4ms | Allocations: 643)
+  [1m[36mShelter Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" ORDER BY "shelters"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mShelter Count (21.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+Started POST "/api/v1/shelters" for 127.0.0.1 at 2024-02-21 14:28:22 -0700
+Processing by Api::V1::SheltersController#create as HTML
+  Parameters: {"shelter"=>{"name"=>"Red Barn"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Create (0.8ms)[0m  [1m[32mINSERT INTO "shelters" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Red Barn"], ["created_at", "2024-02-21 21:28:22.132738"], ["updated_at", "2024-02-21 21:28:22.132738"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 1.0ms | Allocations: 5952)
+  [1m[36mShelter Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" ORDER BY "shelters"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/shelters" for 127.0.0.1 at 2024-02-21 14:28:22 -0700
+Processing by Api::V1::SheltersController#create as HTML
+  Parameters: {"shelter"=>{"name"=>"Red Barn"}}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Create (0.2ms)[0m  [1m[32mINSERT INTO "shelters" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Red Barn"], ["created_at", "2024-02-21 21:28:22.138634"], ["updated_at", "2024-02-21 21:28:22.138634"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 597)
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" ORDER BY "shelters"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mShelter Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+Started PATCH "/api/v1/shelters/43" for 127.0.0.1 at 2024-02-21 14:28:22 -0700
+Processing by Api::V1::SheltersController#update as HTML
+  Parameters: {"shelter"=>{"name"=>"Blue Coop"}, "id"=>"43"}
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 43], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Update (0.2ms)[0m  [1m[33mUPDATE "shelters" SET "name" = $1, "updated_at" = $2 WHERE "shelters"."id" = $3[0m  [["name", "Blue Coop"], ["updated_at", "2024-02-21 21:28:22.141510"], ["id", 43]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 2ms (Views: 0.0ms | ActiveRecord: 0.4ms | Allocations: 1725)
+  [1m[36mShelter Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" ORDER BY "shelters"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (22.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mShelter Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+Started POST "/api/v1/shelters" for 127.0.0.1 at 2024-02-21 14:28:30 -0700
+Processing by Api::V1::SheltersController#create as HTML
+  Parameters: {"shelter"=>{"name"=>"Red Barn"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Create (0.6ms)[0m  [1m[32mINSERT INTO "shelters" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Red Barn"], ["created_at", "2024-02-21 21:28:30.919925"], ["updated_at", "2024-02-21 21:28:30.919925"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 0.7ms | Allocations: 5952)
+  [1m[36mShelter Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+  [1m[36mShelter Load (0.2ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" ORDER BY "shelters"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/shelters" for 127.0.0.1 at 2024-02-21 14:28:30 -0700
+Processing by Api::V1::SheltersController#create as HTML
+  Parameters: {"shelter"=>{"name"=>"Red Barn"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Create (0.2ms)[0m  [1m[32mINSERT INTO "shelters" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Red Barn"], ["created_at", "2024-02-21 21:28:30.926014"], ["updated_at", "2024-02-21 21:28:30.926014"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 1ms (Views: 0.0ms | ActiveRecord: 0.3ms | Allocations: 597)
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" ORDER BY "shelters"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mShelter Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+Started PATCH "/api/v1/shelters/45" for 127.0.0.1 at 2024-02-21 14:28:30 -0700
+Processing by Api::V1::SheltersController#update as HTML
+  Parameters: {"shelter"=>{"name"=>"Blue Coop"}, "id"=>"45"}
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Update (0.3ms)[0m  [1m[33mUPDATE "shelters" SET "name" = $1, "updated_at" = $2 WHERE "shelters"."id" = $3[0m  [["name", "Blue Coop"], ["updated_at", "2024-02-21 21:28:30.928707"], ["id", 45]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 2ms (Views: 0.0ms | ActiveRecord: 0.5ms | Allocations: 1724)
+  [1m[36mShelter Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" ORDER BY "shelters"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/shelters" for 127.0.0.1 at 2024-02-21 14:28:30 -0700
+Processing by Api::V1::SheltersController#create as HTML
+  Parameters: {"shelter"=>{"name"=>"Red Barn"}}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Create (0.2ms)[0m  [1m[32mINSERT INTO "shelters" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Red Barn"], ["created_at", "2024-02-21 21:28:30.930652"], ["updated_at", "2024-02-21 21:28:30.930652"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 1ms (Views: 0.0ms | ActiveRecord: 0.2ms | Allocations: 594)
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" ORDER BY "shelters"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mAnimal Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "animals"[0m
+Started POST "/api/v1/shelters/46/animals" for 127.0.0.1 at 2024-02-21 14:28:30 -0700
+Processing by Api::V1::AnimalsController#create as HTML
+  Parameters: {"animal"=>{"shelter_id"=>46, "name"=>"Huck"}, "shelter_id"=>"46"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 46], ["LIMIT", 1]]
+  [1m[36mAnimal Create (1.4ms)[0m  [1m[32mINSERT INTO "animals" ("name", "shelter_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Huck"], ["shelter_id", 46], ["created_at", "2024-02-21 21:28:30.934550"], ["updated_at", "2024-02-21 21:28:30.934550"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 1.7ms | Allocations: 2685)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mShelter Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+Started POST "/api/v1/shelters" for 127.0.0.1 at 2024-02-21 14:28:30 -0700
+Processing by Api::V1::SheltersController#create as HTML
+  Parameters: {"shelter"=>{"name"=>"Red Barn"}}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Create (0.2ms)[0m  [1m[32mINSERT INTO "shelters" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Red Barn"], ["created_at", "2024-02-21 21:28:30.938060"], ["updated_at", "2024-02-21 21:28:30.938060"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 1ms (Views: 0.0ms | ActiveRecord: 0.3ms | Allocations: 595)
+  [1m[36mShelter Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" ORDER BY "shelters"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/shelters" for 127.0.0.1 at 2024-02-21 14:28:30 -0700
+Processing by Api::V1::SheltersController#create as HTML
+  Parameters: {"shelter"=>{"name"=>"Red Barn"}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Create (0.4ms)[0m  [1m[32mINSERT INTO "shelters" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Red Barn"], ["created_at", "2024-02-21 21:28:30.939812"], ["updated_at", "2024-02-21 21:28:30.939812"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 1ms (Views: 0.0ms | ActiveRecord: 0.6ms | Allocations: 594)
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" ORDER BY "shelters"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mShelter Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+Started PATCH "/api/v1/shelters/48" for 127.0.0.1 at 2024-02-21 14:28:30 -0700
+Processing by Api::V1::SheltersController#update as HTML
+  Parameters: {"shelter"=>{"name"=>"Blue Coop"}, "id"=>"48"}
+  [1m[36mShelter Load (0.2ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 48], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Update (0.4ms)[0m  [1m[33mUPDATE "shelters" SET "name" = $1, "updated_at" = $2 WHERE "shelters"."id" = $3[0m  [["name", "Blue Coop"], ["updated_at", "2024-02-21 21:28:30.946530"], ["id", 48]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 1ms (Views: 0.0ms | ActiveRecord: 0.8ms | Allocations: 643)
+  [1m[36mShelter Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" ORDER BY "shelters"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.4ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mShelter Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+Started POST "/api/v1/shelters" for 127.0.0.1 at 2024-02-21 14:28:54 -0700
+Processing by Api::V1::SheltersController#create as HTML
+  Parameters: {"shelter"=>{"name"=>"Red Barn"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Create (22.8ms)[0m  [1m[32mINSERT INTO "shelters" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Red Barn"], ["created_at", "2024-02-21 21:28:54.047682"], ["updated_at", "2024-02-21 21:28:54.047682"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 29ms (Views: 0.2ms | ActiveRecord: 23.0ms | Allocations: 5952)
+  [1m[36mShelter Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+  [1m[36mShelter Load (0.2ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" ORDER BY "shelters"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/shelters" for 127.0.0.1 at 2024-02-21 14:28:54 -0700
+Processing by Api::V1::SheltersController#create as HTML
+  Parameters: {"shelter"=>{"name"=>"Red Barn"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Create (0.4ms)[0m  [1m[32mINSERT INTO "shelters" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Red Barn"], ["created_at", "2024-02-21 21:28:54.077046"], ["updated_at", "2024-02-21 21:28:54.077046"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.5ms | Allocations: 597)
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" ORDER BY "shelters"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mShelter Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+Started PATCH "/api/v1/shelters/50" for 127.0.0.1 at 2024-02-21 14:28:54 -0700
+Processing by Api::V1::SheltersController#update as HTML
+  Parameters: {"shelter"=>{"name"=>"Blue Coop"}, "id"=>"50"}
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 50], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Update (0.4ms)[0m  [1m[33mUPDATE "shelters" SET "name" = $1, "updated_at" = $2 WHERE "shelters"."id" = $3[0m  [["name", "Blue Coop"], ["updated_at", "2024-02-21 21:28:54.080510"], ["id", 50]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 2ms (Views: 0.0ms | ActiveRecord: 0.7ms | Allocations: 1724)
+  [1m[36mShelter Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" ORDER BY "shelters"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/shelters" for 127.0.0.1 at 2024-02-21 14:28:54 -0700
+Processing by Api::V1::SheltersController#create as HTML
+  Parameters: {"shelter"=>{"name"=>"Red Barn"}}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Create (0.2ms)[0m  [1m[32mINSERT INTO "shelters" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Red Barn"], ["created_at", "2024-02-21 21:28:54.082871"], ["updated_at", "2024-02-21 21:28:54.082871"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 1ms (Views: 0.0ms | ActiveRecord: 0.3ms | Allocations: 594)
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" ORDER BY "shelters"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mAnimal Count (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "animals"[0m
+Started POST "/api/v1/shelters/51/animals" for 127.0.0.1 at 2024-02-21 14:28:54 -0700
+Processing by Api::V1::AnimalsController#create as HTML
+  Parameters: {"animal"=>{"shelter_id"=>51, "name"=>"Huck"}, "shelter_id"=>"51"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 51], ["LIMIT", 1]]
+  [1m[36mAnimal Create (0.5ms)[0m  [1m[32mINSERT INTO "animals" ("name", "shelter_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Huck"], ["shelter_id", 51], ["created_at", "2024-02-21 21:28:54.087187"], ["updated_at", "2024-02-21 21:28:54.087187"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.7ms | Allocations: 2451)
+  [1m[36mAnimal Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "animals"[0m
+  [1m[36mAnimal Load (0.1ms)[0m  [1m[34mSELECT "animals".* FROM "animals" ORDER BY "animals"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mAnimal Load (0.1ms)[0m  [1m[34mSELECT "animals".* FROM "animals" ORDER BY "animals"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mAnimal Load (0.1ms)[0m  [1m[34mSELECT "animals".* FROM "animals" WHERE "animals"."shelter_id" = $1[0m  [["shelter_id", 51]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mShelter Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+Started POST "/api/v1/shelters" for 127.0.0.1 at 2024-02-21 14:28:54 -0700
+Processing by Api::V1::SheltersController#create as HTML
+  Parameters: {"shelter"=>{"name"=>"Red Barn"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Create (0.7ms)[0m  [1m[32mINSERT INTO "shelters" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Red Barn"], ["created_at", "2024-02-21 21:28:54.092951"], ["updated_at", "2024-02-21 21:28:54.092951"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 1ms (Views: 0.0ms | ActiveRecord: 0.8ms | Allocations: 596)
+  [1m[36mShelter Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+  [1m[36mShelter Load (0.2ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" ORDER BY "shelters"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/shelters" for 127.0.0.1 at 2024-02-21 14:28:54 -0700
+Processing by Api::V1::SheltersController#create as HTML
+  Parameters: {"shelter"=>{"name"=>"Red Barn"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Create (0.4ms)[0m  [1m[32mINSERT INTO "shelters" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Red Barn"], ["created_at", "2024-02-21 21:28:54.101091"], ["updated_at", "2024-02-21 21:28:54.101091"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 1ms (Views: 0.0ms | ActiveRecord: 0.5ms | Allocations: 595)
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" ORDER BY "shelters"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mShelter Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+Started PATCH "/api/v1/shelters/53" for 127.0.0.1 at 2024-02-21 14:28:54 -0700
+Processing by Api::V1::SheltersController#update as HTML
+  Parameters: {"shelter"=>{"name"=>"Blue Coop"}, "id"=>"53"}
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 53], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Update (0.2ms)[0m  [1m[33mUPDATE "shelters" SET "name" = $1, "updated_at" = $2 WHERE "shelters"."id" = $3[0m  [["name", "Blue Coop"], ["updated_at", "2024-02-21 21:28:54.103563"], ["id", 53]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 1ms (Views: 0.0ms | ActiveRecord: 0.4ms | Allocations: 642)
+  [1m[36mShelter Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" ORDER BY "shelters"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.5ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mShelter Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+Started POST "/api/v1/shelters" for 127.0.0.1 at 2024-02-21 14:32:09 -0700
+Processing by Api::V1::SheltersController#create as HTML
+  Parameters: {"shelter"=>{"name"=>"Red Barn"}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Create (3.6ms)[0m  [1m[32mINSERT INTO "shelters" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Red Barn"], ["created_at", "2024-02-21 21:32:09.865516"], ["updated_at", "2024-02-21 21:32:09.865516"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 9ms (Views: 0.1ms | ActiveRecord: 3.8ms | Allocations: 5952)
+  [1m[36mShelter Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+  [1m[36mShelter Load (0.2ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" ORDER BY "shelters"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/shelters" for 127.0.0.1 at 2024-02-21 14:32:09 -0700
+Processing by Api::V1::SheltersController#create as HTML
+  Parameters: {"shelter"=>{"name"=>"Red Barn"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Create (0.3ms)[0m  [1m[32mINSERT INTO "shelters" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Red Barn"], ["created_at", "2024-02-21 21:32:09.874769"], ["updated_at", "2024-02-21 21:32:09.874769"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 1ms (Views: 0.0ms | ActiveRecord: 0.5ms | Allocations: 597)
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" ORDER BY "shelters"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mShelter Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+Started PATCH "/api/v1/shelters/55" for 127.0.0.1 at 2024-02-21 14:32:09 -0700
+Processing by Api::V1::SheltersController#update as HTML
+  Parameters: {"shelter"=>{"name"=>"Blue Coop"}, "id"=>"55"}
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 55], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Update (0.4ms)[0m  [1m[33mUPDATE "shelters" SET "name" = $1, "updated_at" = $2 WHERE "shelters"."id" = $3[0m  [["name", "Blue Coop"], ["updated_at", "2024-02-21 21:32:09.877820"], ["id", 55]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 2ms (Views: 0.0ms | ActiveRecord: 0.5ms | Allocations: 1725)
+  [1m[36mShelter Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" ORDER BY "shelters"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mShelter Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+Started POST "/api/v1/shelters" for 127.0.0.1 at 2024-02-21 14:32:23 -0700
+Processing by Api::V1::SheltersController#create as HTML
+  Parameters: {"shelter"=>{"name"=>"Red Barn"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Create (11.9ms)[0m  [1m[32mINSERT INTO "shelters" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Red Barn"], ["created_at", "2024-02-21 21:32:23.730950"], ["updated_at", "2024-02-21 21:32:23.730950"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 18ms (Views: 0.1ms | ActiveRecord: 12.2ms | Allocations: 5952)
+  [1m[36mShelter Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+  [1m[36mShelter Load (0.2ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" ORDER BY "shelters"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/shelters" for 127.0.0.1 at 2024-02-21 14:32:23 -0700
+Processing by Api::V1::SheltersController#create as HTML
+  Parameters: {"shelter"=>{"name"=>"Red Barn"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Create (0.4ms)[0m  [1m[32mINSERT INTO "shelters" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Red Barn"], ["created_at", "2024-02-21 21:32:23.748518"], ["updated_at", "2024-02-21 21:32:23.748518"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 1ms (Views: 0.0ms | ActiveRecord: 0.5ms | Allocations: 597)
+  [1m[36mShelter Load (0.3ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" ORDER BY "shelters"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mShelter Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+Started PATCH "/api/v1/shelters/57" for 127.0.0.1 at 2024-02-21 14:32:23 -0700
+Processing by Api::V1::SheltersController#update as HTML
+  Parameters: {"shelter"=>{"name"=>"Blue Coop"}, "id"=>"57"}
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 57], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Update (0.4ms)[0m  [1m[33mUPDATE "shelters" SET "name" = $1, "updated_at" = $2 WHERE "shelters"."id" = $3[0m  [["name", "Blue Coop"], ["updated_at", "2024-02-21 21:32:23.752029"], ["id", 57]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 2ms (Views: 0.0ms | ActiveRecord: 0.6ms | Allocations: 1724)
+  [1m[36mShelter Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" ORDER BY "shelters"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/shelters" for 127.0.0.1 at 2024-02-21 14:32:23 -0700
+Processing by Api::V1::SheltersController#create as HTML
+  Parameters: {"shelter"=>{"name"=>"Red Barn"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Create (0.3ms)[0m  [1m[32mINSERT INTO "shelters" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Red Barn"], ["created_at", "2024-02-21 21:32:23.754275"], ["updated_at", "2024-02-21 21:32:23.754275"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 1ms (Views: 0.0ms | ActiveRecord: 0.4ms | Allocations: 594)
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" ORDER BY "shelters"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mAnimal Count (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "animals"[0m
+Started POST "/api/v1/shelters/58/animals" for 127.0.0.1 at 2024-02-21 14:32:23 -0700
+Processing by Api::V1::AnimalsController#create as HTML
+  Parameters: {"animal"=>{"shelter_id"=>58, "name"=>"Huck", "type"=>"Chicken", "birthday"=>nil, "color"=>nil, "slogan"=>nil, "diet"=>nil, "speed"=>nil}, "shelter_id"=>"58"}
+[31mUnpermitted parameters: :type, :birthday, :color, :slogan, :diet, :speed. Context: { controller: Api::V1::AnimalsController, action: create, request: #<ActionDispatch::Request:0x00000001139fce50>, params: {"animal"=>{"shelter_id"=>58, "name"=>"Huck", "type"=>"Chicken", "birthday"=>nil, "color"=>nil, "slogan"=>nil, "diet"=>nil, "speed"=>nil}, "controller"=>"api/v1/animals", "action"=>"create", "shelter_id"=>"58"} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 58], ["LIMIT", 1]]
+  [1m[36mAnimal Create (0.3ms)[0m  [1m[32mINSERT INTO "animals" ("name", "shelter_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Huck"], ["shelter_id", 58], ["created_at", "2024-02-21 21:32:23.759364"], ["updated_at", "2024-02-21 21:32:23.759364"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.5ms | Allocations: 2772)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mShelter Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+Started POST "/api/v1/shelters" for 127.0.0.1 at 2024-02-21 14:32:23 -0700
+Processing by Api::V1::SheltersController#create as HTML
+  Parameters: {"shelter"=>{"name"=>"Red Barn"}}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Create (0.2ms)[0m  [1m[32mINSERT INTO "shelters" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Red Barn"], ["created_at", "2024-02-21 21:32:23.761900"], ["updated_at", "2024-02-21 21:32:23.761900"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 1ms (Views: 0.0ms | ActiveRecord: 0.2ms | Allocations: 595)
+  [1m[36mShelter Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" ORDER BY "shelters"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/shelters" for 127.0.0.1 at 2024-02-21 14:32:23 -0700
+Processing by Api::V1::SheltersController#create as HTML
+  Parameters: {"shelter"=>{"name"=>"Red Barn"}}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Create (0.6ms)[0m  [1m[32mINSERT INTO "shelters" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Red Barn"], ["created_at", "2024-02-21 21:32:23.763758"], ["updated_at", "2024-02-21 21:32:23.763758"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 1ms (Views: 0.0ms | ActiveRecord: 0.7ms | Allocations: 594)
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" ORDER BY "shelters"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mShelter Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+Started PATCH "/api/v1/shelters/60" for 127.0.0.1 at 2024-02-21 14:32:23 -0700
+Processing by Api::V1::SheltersController#update as HTML
+  Parameters: {"shelter"=>{"name"=>"Blue Coop"}, "id"=>"60"}
+  [1m[36mShelter Load (0.2ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 60], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Update (0.3ms)[0m  [1m[33mUPDATE "shelters" SET "name" = $1, "updated_at" = $2 WHERE "shelters"."id" = $3[0m  [["name", "Blue Coop"], ["updated_at", "2024-02-21 21:32:23.771007"], ["id", 60]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 1ms (Views: 0.0ms | ActiveRecord: 0.6ms | Allocations: 643)
+  [1m[36mShelter Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" ORDER BY "shelters"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.6ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mShelter Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+Started POST "/api/v1/shelters" for 127.0.0.1 at 2024-02-21 14:33:28 -0700
+Processing by Api::V1::SheltersController#create as HTML
+  Parameters: {"shelter"=>{"name"=>"Red Barn"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Create (0.7ms)[0m  [1m[32mINSERT INTO "shelters" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Red Barn"], ["created_at", "2024-02-21 21:33:28.081875"], ["updated_at", "2024-02-21 21:33:28.081875"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.8ms | Allocations: 5952)
+  [1m[36mShelter Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+  [1m[36mShelter Load (0.2ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" ORDER BY "shelters"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/shelters" for 127.0.0.1 at 2024-02-21 14:33:28 -0700
+Processing by Api::V1::SheltersController#create as HTML
+  Parameters: {"shelter"=>{"name"=>"Red Barn"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Create (0.3ms)[0m  [1m[32mINSERT INTO "shelters" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Red Barn"], ["created_at", "2024-02-21 21:33:28.100568"], ["updated_at", "2024-02-21 21:33:28.100568"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 597)
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" ORDER BY "shelters"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mShelter Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+Started PATCH "/api/v1/shelters/62" for 127.0.0.1 at 2024-02-21 14:33:28 -0700
+Processing by Api::V1::SheltersController#update as HTML
+  Parameters: {"shelter"=>{"name"=>"Blue Coop"}, "id"=>"62"}
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 62], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Update (0.3ms)[0m  [1m[33mUPDATE "shelters" SET "name" = $1, "updated_at" = $2 WHERE "shelters"."id" = $3[0m  [["name", "Blue Coop"], ["updated_at", "2024-02-21 21:33:28.103847"], ["id", 62]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.5ms | Allocations: 1724)
+  [1m[36mShelter Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" ORDER BY "shelters"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/shelters" for 127.0.0.1 at 2024-02-21 14:33:28 -0700
+Processing by Api::V1::SheltersController#create as HTML
+  Parameters: {"shelter"=>{"name"=>"Red Barn"}}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Create (0.3ms)[0m  [1m[32mINSERT INTO "shelters" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Red Barn"], ["created_at", "2024-02-21 21:33:28.106030"], ["updated_at", "2024-02-21 21:33:28.106030"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 594)
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" ORDER BY "shelters"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mAnimal Count (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "animals"[0m
+Started POST "/api/v1/shelters/63/animals" for 127.0.0.1 at 2024-02-21 14:33:28 -0700
+Processing by Api::V1::AnimalsController#create as HTML
+  Parameters: {"animal"=>{"shelter_id"=>63, "name"=>"Huck", "type"=>"Chicken", "birthday"=>nil, "color"=>nil, "slogan"=>nil, "diet"=>nil, "speed"=>nil}, "shelter_id"=>"63"}
+[31mUnpermitted parameters: :type, :birthday, :color, :slogan, :diet, :speed. Context: { controller: Api::V1::AnimalsController, action: create, request: #<ActionDispatch::Request:0x00000001138be750>, params: {"animal"=>{"shelter_id"=>63, "name"=>"Huck", "type"=>"Chicken", "birthday"=>nil, "color"=>nil, "slogan"=>nil, "diet"=>nil, "speed"=>nil}, "controller"=>"api/v1/animals", "action"=>"create", "shelter_id"=>"63"} }[0m
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 525)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mShelter Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+Started POST "/api/v1/shelters" for 127.0.0.1 at 2024-02-21 14:33:28 -0700
+Processing by Api::V1::SheltersController#create as HTML
+  Parameters: {"shelter"=>{"name"=>"Red Barn"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Create (0.4ms)[0m  [1m[32mINSERT INTO "shelters" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Red Barn"], ["created_at", "2024-02-21 21:33:28.110637"], ["updated_at", "2024-02-21 21:33:28.110637"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 1ms (Views: 0.0ms | ActiveRecord: 0.5ms | Allocations: 594)
+  [1m[36mShelter Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" ORDER BY "shelters"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/shelters" for 127.0.0.1 at 2024-02-21 14:33:28 -0700
+Processing by Api::V1::SheltersController#create as HTML
+  Parameters: {"shelter"=>{"name"=>"Red Barn"}}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Create (0.2ms)[0m  [1m[32mINSERT INTO "shelters" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Red Barn"], ["created_at", "2024-02-21 21:33:28.112640"], ["updated_at", "2024-02-21 21:33:28.112640"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 1ms (Views: 0.0ms | ActiveRecord: 0.2ms | Allocations: 594)
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" ORDER BY "shelters"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mShelter Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+Started PATCH "/api/v1/shelters/65" for 127.0.0.1 at 2024-02-21 14:33:28 -0700
+Processing by Api::V1::SheltersController#update as HTML
+  Parameters: {"shelter"=>{"name"=>"Blue Coop"}, "id"=>"65"}
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 65], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Update (0.2ms)[0m  [1m[33mUPDATE "shelters" SET "name" = $1, "updated_at" = $2 WHERE "shelters"."id" = $3[0m  [["name", "Blue Coop"], ["updated_at", "2024-02-21 21:33:28.114170"], ["id", 65]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 1ms (Views: 0.0ms | ActiveRecord: 0.3ms | Allocations: 642)
+  [1m[36mShelter Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+  [1m[36mShelter Load (0.0ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" ORDER BY "shelters"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (36.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "chicken_tracker_be_test"[0m
+  [1m[35m (40.0ms)[0m  [1m[35mCREATE DATABASE "chicken_tracker_be_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "animals" CASCADE[0m
+  [1m[35m (4.2ms)[0m  [1m[35mCREATE TABLE "animals" ("id" bigserial primary key, "name" character varying, "type" character varying, "birthday" character varying, "color" character varying, "slogan" character varying, "diet" character varying, "speed" character varying, "shelter_id" bigint, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE INDEX "index_animals_on_shelter_id" ON "animals" ("shelter_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "shelters" CASCADE[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "shelters" ("id" bigserial primary key, "name" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "animals" ADD CONSTRAINT "fk_rails_05a33b8800"
+FOREIGN KEY ("shelter_id")
+  REFERENCES "shelters" ("id")
+[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20240220232207)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20240220232202);[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'test', '2024-02-21 21:34:30.798852', '2024-02-21 21:34:30.798854') RETURNING "key"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('schema_sha1', 'b79eeeaa49ecc09d544667afefb14699c3dbf45b', '2024-02-21 21:34:30.799749', '2024-02-21 21:34:30.799750') RETURNING "key"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (6.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mShelter Count (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+Started POST "/api/v1/shelters" for 127.0.0.1 at 2024-02-21 14:34:30 -0700
+Processing by Api::V1::SheltersController#create as HTML
+  Parameters: {"shelter"=>{"name"=>"Red Barn"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Create (0.6ms)[0m  [1m[32mINSERT INTO "shelters" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Red Barn"], ["created_at", "2024-02-21 21:34:30.971537"], ["updated_at", "2024-02-21 21:34:30.971537"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 0.8ms | Allocations: 6002)
+  [1m[36mShelter Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" ORDER BY "shelters"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/shelters" for 127.0.0.1 at 2024-02-21 14:34:30 -0700
+Processing by Api::V1::SheltersController#create as HTML
+  Parameters: {"shelter"=>{"name"=>"Red Barn"}}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Create (0.2ms)[0m  [1m[32mINSERT INTO "shelters" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Red Barn"], ["created_at", "2024-02-21 21:34:30.976761"], ["updated_at", "2024-02-21 21:34:30.976761"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 597)
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" ORDER BY "shelters"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mShelter Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+Started PATCH "/api/v1/shelters/2" for 127.0.0.1 at 2024-02-21 14:34:30 -0700
+Processing by Api::V1::SheltersController#update as HTML
+  Parameters: {"shelter"=>{"name"=>"Blue Coop"}, "id"=>"2"}
+  [1m[36mShelter Load (0.2ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Update (0.4ms)[0m  [1m[33mUPDATE "shelters" SET "name" = $1, "updated_at" = $2 WHERE "shelters"."id" = $3[0m  [["name", "Blue Coop"], ["updated_at", "2024-02-21 21:34:30.979928"], ["id", 2]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 2ms (Views: 0.0ms | ActiveRecord: 0.7ms | Allocations: 1745)
+  [1m[36mShelter Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" ORDER BY "shelters"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/shelters" for 127.0.0.1 at 2024-02-21 14:34:30 -0700
+Processing by Api::V1::SheltersController#create as HTML
+  Parameters: {"shelter"=>{"name"=>"Red Barn"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Create (0.4ms)[0m  [1m[32mINSERT INTO "shelters" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Red Barn"], ["created_at", "2024-02-21 21:34:30.987346"], ["updated_at", "2024-02-21 21:34:30.987346"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.5ms | Allocations: 595)
+  [1m[36mShelter Load (0.5ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" ORDER BY "shelters"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mAnimal Count (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "animals"[0m
+Started POST "/api/v1/shelters/3/animals" for 127.0.0.1 at 2024-02-21 14:34:30 -0700
+Processing by Api::V1::AnimalsController#create as HTML
+  Parameters: {"animal"=>{"shelter_id"=>3, "name"=>"Huck", "type"=>"Chicken", "birthday"=>nil, "color"=>nil, "slogan"=>nil, "diet"=>nil, "speed"=>nil}, "shelter_id"=>"3"}
+[31mUnpermitted parameters: :type, :birthday, :color, :slogan, :diet, :speed. Context: { controller: Api::V1::AnimalsController, action: create, request: #<ActionDispatch::Request:0x000000010b026cd0>, params: {"animal"=>{"shelter_id"=>3, "name"=>"Huck", "type"=>"Chicken", "birthday"=>nil, "color"=>nil, "slogan"=>nil, "diet"=>nil, "speed"=>nil}, "controller"=>"api/v1/animals", "action"=>"create", "shelter_id"=>"3"} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+Completed 204 No Content in 2ms (ActiveRecord: 0.3ms | Allocations: 2322)
+  [1m[36mAnimal Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "animals"[0m
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mShelter Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+Started POST "/api/v1/shelters" for 127.0.0.1 at 2024-02-21 14:34:31 -0700
+Processing by Api::V1::SheltersController#create as HTML
+  Parameters: {"shelter"=>{"name"=>"Red Barn"}}
+  [1m[36mTRANSACTION (3.6ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Create (4.2ms)[0m  [1m[32mINSERT INTO "shelters" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Red Barn"], ["created_at", "2024-02-21 21:34:31.001620"], ["updated_at", "2024-02-21 21:34:31.001620"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 5ms (Views: 0.0ms | ActiveRecord: 7.8ms | Allocations: 594)
+  [1m[36mShelter Count (17.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+  [1m[36mShelter Load (0.2ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" ORDER BY "shelters"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/shelters" for 127.0.0.1 at 2024-02-21 14:34:31 -0700
+Processing by Api::V1::SheltersController#create as HTML
+  Parameters: {"shelter"=>{"name"=>"Red Barn"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Create (0.4ms)[0m  [1m[32mINSERT INTO "shelters" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Red Barn"], ["created_at", "2024-02-21 21:34:31.025900"], ["updated_at", "2024-02-21 21:34:31.025900"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 1ms (Views: 0.0ms | ActiveRecord: 0.5ms | Allocations: 594)
+  [1m[36mShelter Load (1.3ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" ORDER BY "shelters"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mShelter Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+Started PATCH "/api/v1/shelters/5" for 127.0.0.1 at 2024-02-21 14:34:31 -0700
+Processing by Api::V1::SheltersController#update as HTML
+  Parameters: {"shelter"=>{"name"=>"Blue Coop"}, "id"=>"5"}
+  [1m[36mShelter Load (3.5ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (46.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Update (47.7ms)[0m  [1m[33mUPDATE "shelters" SET "name" = $1, "updated_at" = $2 WHERE "shelters"."id" = $3[0m  [["name", "Blue Coop"], ["updated_at", "2024-02-21 21:34:31.033017"], ["id", 5]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 52ms (Views: 0.1ms | ActiveRecord: 97.6ms | Allocations: 643)
+  [1m[36mShelter Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" ORDER BY "shelters"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.5ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mShelter Count (1.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+Started POST "/api/v1/shelters" for 127.0.0.1 at 2024-02-21 14:39:11 -0700
+Processing by Api::V1::SheltersController#create as HTML
+  Parameters: {"shelter"=>{"name"=>"Red Barn"}}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Create (12.4ms)[0m  [1m[32mINSERT INTO "shelters" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Red Barn"], ["created_at", "2024-02-21 21:39:11.954850"], ["updated_at", "2024-02-21 21:39:11.954850"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 19ms (Views: 0.1ms | ActiveRecord: 13.0ms | Allocations: 5936)
+  [1m[36mShelter Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" ORDER BY "shelters"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/shelters" for 127.0.0.1 at 2024-02-21 14:39:11 -0700
+Processing by Api::V1::SheltersController#create as HTML
+  Parameters: {"shelter"=>{"name"=>"Red Barn"}}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Create (0.3ms)[0m  [1m[32mINSERT INTO "shelters" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Red Barn"], ["created_at", "2024-02-21 21:39:11.973577"], ["updated_at", "2024-02-21 21:39:11.973577"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 597)
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" ORDER BY "shelters"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mShelter Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+Started PATCH "/api/v1/shelters/7" for 127.0.0.1 at 2024-02-21 14:39:11 -0700
+Processing by Api::V1::SheltersController#update as HTML
+  Parameters: {"shelter"=>{"name"=>"Blue Coop"}, "id"=>"7"}
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Update (0.5ms)[0m  [1m[33mUPDATE "shelters" SET "name" = $1, "updated_at" = $2 WHERE "shelters"."id" = $3[0m  [["name", "Blue Coop"], ["updated_at", "2024-02-21 21:39:11.976746"], ["id", 7]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.8ms | Allocations: 1724)
+  [1m[36mShelter Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" ORDER BY "shelters"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/shelters" for 127.0.0.1 at 2024-02-21 14:39:11 -0700
+Processing by Api::V1::SheltersController#create as HTML
+  Parameters: {"shelter"=>{"name"=>"Red Barn"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Create (0.3ms)[0m  [1m[32mINSERT INTO "shelters" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Red Barn"], ["created_at", "2024-02-21 21:39:11.979368"], ["updated_at", "2024-02-21 21:39:11.979368"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 1ms (Views: 0.0ms | ActiveRecord: 0.5ms | Allocations: 594)
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" ORDER BY "shelters"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mAnimal Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "animals"[0m
+Started POST "/api/v1/shelters/8/animals" for 127.0.0.1 at 2024-02-21 14:39:11 -0700
+Processing by Api::V1::AnimalsController#create as HTML
+  Parameters: {"animal"=>{"shelter_id"=>8, "name"=>"Huck", "type"=>"Chicken", "birthday"=>nil, "color"=>nil, "slogan"=>nil, "diet"=>nil, "speed"=>nil}, "shelter_id"=>"8"}
+[31mUnpermitted parameters: :type, :birthday, :color, :slogan, :diet, :speed. Context: { controller: Api::V1::AnimalsController, action: create, request: #<ActionDispatch::Request:0x000000010d51e420>, params: {"animal"=>{"shelter_id"=>8, "name"=>"Huck", "type"=>"Chicken", "birthday"=>nil, "color"=>nil, "slogan"=>nil, "diet"=>nil, "speed"=>nil}, "controller"=>"api/v1/animals", "action"=>"create", "shelter_id"=>"8"} }[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+Completed 204 No Content in 8ms (ActiveRecord: 0.7ms | Allocations: 2232)
+  [1m[36mAnimal Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "animals"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mShelter Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+Started POST "/api/v1/shelters" for 127.0.0.1 at 2024-02-21 14:39:11 -0700
+Processing by Api::V1::SheltersController#create as HTML
+  Parameters: {"shelter"=>{"name"=>"Red Barn"}}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Create (0.2ms)[0m  [1m[32mINSERT INTO "shelters" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Red Barn"], ["created_at", "2024-02-21 21:39:11.996255"], ["updated_at", "2024-02-21 21:39:11.996255"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 594)
+  [1m[36mShelter Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" ORDER BY "shelters"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/shelters" for 127.0.0.1 at 2024-02-21 14:39:11 -0700
+Processing by Api::V1::SheltersController#create as HTML
+  Parameters: {"shelter"=>{"name"=>"Red Barn"}}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Create (0.2ms)[0m  [1m[32mINSERT INTO "shelters" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Red Barn"], ["created_at", "2024-02-21 21:39:11.998411"], ["updated_at", "2024-02-21 21:39:11.998411"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 1ms (Views: 0.0ms | ActiveRecord: 0.3ms | Allocations: 594)
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" ORDER BY "shelters"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mShelter Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+Started PATCH "/api/v1/shelters/10" for 127.0.0.1 at 2024-02-21 14:39:11 -0700
+Processing by Api::V1::SheltersController#update as HTML
+  Parameters: {"shelter"=>{"name"=>"Blue Coop"}, "id"=>"10"}
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Update (0.5ms)[0m  [1m[33mUPDATE "shelters" SET "name" = $1, "updated_at" = $2 WHERE "shelters"."id" = $3[0m  [["name", "Blue Coop"], ["updated_at", "2024-02-21 21:39:12.000127"], ["id", 10]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 1ms (Views: 0.0ms | ActiveRecord: 0.6ms | Allocations: 643)
+  [1m[36mShelter Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" ORDER BY "shelters"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Load (2.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mShelter Count (6.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+Started POST "/api/v1/shelters" for 127.0.0.1 at 2024-02-21 14:41:40 -0700
+Processing by Api::V1::SheltersController#create as HTML
+  Parameters: {"shelter"=>{"name"=>"Red Barn"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Create (1.8ms)[0m  [1m[32mINSERT INTO "shelters" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Red Barn"], ["created_at", "2024-02-21 21:41:40.119627"], ["updated_at", "2024-02-21 21:41:40.119627"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 8ms (Views: 0.1ms | ActiveRecord: 2.2ms | Allocations: 5934)
+  [1m[36mShelter Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+  [1m[36mShelter Load (0.2ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" ORDER BY "shelters"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/shelters" for 127.0.0.1 at 2024-02-21 14:41:40 -0700
+Processing by Api::V1::SheltersController#create as HTML
+  Parameters: {"shelter"=>{"name"=>"Red Barn"}}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Create (0.4ms)[0m  [1m[32mINSERT INTO "shelters" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Red Barn"], ["created_at", "2024-02-21 21:41:40.126987"], ["updated_at", "2024-02-21 21:41:40.126987"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 1ms (Views: 0.0ms | ActiveRecord: 0.6ms | Allocations: 596)
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" ORDER BY "shelters"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mShelter Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+Started PATCH "/api/v1/shelters/12" for 127.0.0.1 at 2024-02-21 14:41:40 -0700
+Processing by Api::V1::SheltersController#update as HTML
+  Parameters: {"shelter"=>{"name"=>"Blue Coop"}, "id"=>"12"}
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Update (0.7ms)[0m  [1m[33mUPDATE "shelters" SET "name" = $1, "updated_at" = $2 WHERE "shelters"."id" = $3[0m  [["name", "Blue Coop"], ["updated_at", "2024-02-21 21:41:40.130572"], ["id", 12]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.9ms | Allocations: 1723)
+  [1m[36mShelter Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" ORDER BY "shelters"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/shelters" for 127.0.0.1 at 2024-02-21 14:41:40 -0700
+Processing by Api::V1::SheltersController#create as HTML
+  Parameters: {"shelter"=>{"name"=>"Red Barn"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Create (0.9ms)[0m  [1m[32mINSERT INTO "shelters" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Red Barn"], ["created_at", "2024-02-21 21:41:40.134246"], ["updated_at", "2024-02-21 21:41:40.134246"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 1ms (Views: 0.0ms | ActiveRecord: 1.0ms | Allocations: 593)
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" ORDER BY "shelters"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mAnimal Count (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "animals"[0m
+Started POST "/api/v1/shelters/13/animals" for 127.0.0.1 at 2024-02-21 14:41:40 -0700
+Processing by Api::V1::AnimalsController#create as HTML
+  Parameters: {"animal"=>{"shelter_id"=>13, "name"=>"Huck", "type"=>"Chicken", "birthday"=>nil, "color"=>nil, "slogan"=>nil, "diet"=>nil, "speed"=>nil}, "shelter_id"=>"13"}
+[31mUnpermitted parameters: :type, :birthday, :color, :slogan, :diet, :speed. Context: { controller: Api::V1::AnimalsController, action: create, request: #<ActionDispatch::Request:0x00000001173383e0>, params: {"animal"=>{"shelter_id"=>13, "name"=>"Huck", "type"=>"Chicken", "birthday"=>nil, "color"=>nil, "slogan"=>nil, "diet"=>nil, "speed"=>nil}, "controller"=>"api/v1/animals", "action"=>"create", "shelter_id"=>"13"} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+Completed 500 Internal Server Error in 17779ms (ActiveRecord: 0.9ms | Allocations: 21106)
+  [1m[36mActiveRecord::InternalMetadata Load (1.4ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mShelter Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+Started POST "/api/v1/shelters" for 127.0.0.1 at 2024-02-21 14:42:38 -0700
+Processing by Api::V1::SheltersController#create as HTML
+  Parameters: {"shelter"=>{"name"=>"Red Barn"}}
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Create (6.9ms)[0m  [1m[32mINSERT INTO "shelters" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Red Barn"], ["created_at", "2024-02-21 21:42:38.516509"], ["updated_at", "2024-02-21 21:42:38.516509"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 13ms (Views: 0.1ms | ActiveRecord: 8.1ms | Allocations: 5936)
+  [1m[36mShelter Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+  [1m[36mShelter Load (0.2ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" ORDER BY "shelters"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/shelters" for 127.0.0.1 at 2024-02-21 14:42:38 -0700
+Processing by Api::V1::SheltersController#create as HTML
+  Parameters: {"shelter"=>{"name"=>"Red Barn"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Create (0.4ms)[0m  [1m[32mINSERT INTO "shelters" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Red Barn"], ["created_at", "2024-02-21 21:42:38.528883"], ["updated_at", "2024-02-21 21:42:38.528883"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.5ms | Allocations: 597)
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" ORDER BY "shelters"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mShelter Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+Started PATCH "/api/v1/shelters/15" for 127.0.0.1 at 2024-02-21 14:42:38 -0700
+Processing by Api::V1::SheltersController#update as HTML
+  Parameters: {"shelter"=>{"name"=>"Blue Coop"}, "id"=>"15"}
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Update (0.5ms)[0m  [1m[33mUPDATE "shelters" SET "name" = $1, "updated_at" = $2 WHERE "shelters"."id" = $3[0m  [["name", "Blue Coop"], ["updated_at", "2024-02-21 21:42:38.532269"], ["id", 15]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.8ms | Allocations: 1724)
+  [1m[36mShelter Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" ORDER BY "shelters"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/shelters" for 127.0.0.1 at 2024-02-21 14:42:38 -0700
+Processing by Api::V1::SheltersController#create as HTML
+  Parameters: {"shelter"=>{"name"=>"Red Barn"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Create (0.3ms)[0m  [1m[32mINSERT INTO "shelters" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Red Barn"], ["created_at", "2024-02-21 21:42:38.534953"], ["updated_at", "2024-02-21 21:42:38.534953"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 1ms (Views: 0.0ms | ActiveRecord: 0.4ms | Allocations: 594)
+  [1m[36mShelter Load (0.2ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" ORDER BY "shelters"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mAnimal Count (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "animals"[0m
+Started POST "/api/v1/shelters/16/animals" for 127.0.0.1 at 2024-02-21 14:42:38 -0700
+Processing by Api::V1::AnimalsController#create as HTML
+  Parameters: {"animal"=>{"shelter_id"=>16, "name"=>"Huck", "type"=>"Chicken", "birthday"=>nil, "color"=>nil, "slogan"=>nil, "diet"=>nil, "speed"=>nil}, "shelter_id"=>"16"}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 309)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mShelter Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+Started POST "/api/v1/shelters" for 127.0.0.1 at 2024-02-21 14:42:38 -0700
+Processing by Api::V1::SheltersController#create as HTML
+  Parameters: {"shelter"=>{"name"=>"Red Barn"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Create (0.3ms)[0m  [1m[32mINSERT INTO "shelters" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Red Barn"], ["created_at", "2024-02-21 21:42:38.539448"], ["updated_at", "2024-02-21 21:42:38.539448"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 1ms (Views: 0.0ms | ActiveRecord: 0.4ms | Allocations: 594)
+  [1m[36mShelter Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" ORDER BY "shelters"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/shelters" for 127.0.0.1 at 2024-02-21 14:42:38 -0700
+Processing by Api::V1::SheltersController#create as HTML
+  Parameters: {"shelter"=>{"name"=>"Red Barn"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Create (0.3ms)[0m  [1m[32mINSERT INTO "shelters" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Red Barn"], ["created_at", "2024-02-21 21:42:38.547851"], ["updated_at", "2024-02-21 21:42:38.547851"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 1.2ms | Allocations: 594)
+  [1m[36mShelter Load (0.2ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" ORDER BY "shelters"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mShelter Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+Started PATCH "/api/v1/shelters/18" for 127.0.0.1 at 2024-02-21 14:42:38 -0700
+Processing by Api::V1::SheltersController#update as HTML
+  Parameters: {"shelter"=>{"name"=>"Blue Coop"}, "id"=>"18"}
+  [1m[36mShelter Load (0.2ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Update (0.4ms)[0m  [1m[33mUPDATE "shelters" SET "name" = $1, "updated_at" = $2 WHERE "shelters"."id" = $3[0m  [["name", "Blue Coop"], ["updated_at", "2024-02-21 21:42:38.558447"], ["id", 18]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 4ms (Views: 1.2ms | ActiveRecord: 0.7ms | Allocations: 642)
+  [1m[36mShelter Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" ORDER BY "shelters"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mShelter Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+Started POST "/api/v1/shelters" for 127.0.0.1 at 2024-02-21 14:43:29 -0700
+Processing by Api::V1::SheltersController#create as HTML
+  Parameters: {"shelter"=>{"name"=>"Red Barn"}}
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Create (16.5ms)[0m  [1m[32mINSERT INTO "shelters" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Red Barn"], ["created_at", "2024-02-21 21:43:29.142410"], ["updated_at", "2024-02-21 21:43:29.142410"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 25ms (Views: 0.2ms | ActiveRecord: 18.6ms | Allocations: 5936)
+  [1m[36mShelter Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+  [1m[36mShelter Load (0.2ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" ORDER BY "shelters"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/shelters" for 127.0.0.1 at 2024-02-21 14:43:29 -0700
+Processing by Api::V1::SheltersController#create as HTML
+  Parameters: {"shelter"=>{"name"=>"Red Barn"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Create (0.4ms)[0m  [1m[32mINSERT INTO "shelters" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Red Barn"], ["created_at", "2024-02-21 21:43:29.170570"], ["updated_at", "2024-02-21 21:43:29.170570"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.5ms | Allocations: 597)
+  [1m[36mShelter Load (0.2ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" ORDER BY "shelters"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mShelter Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+Started PATCH "/api/v1/shelters/20" for 127.0.0.1 at 2024-02-21 14:43:29 -0700
+Processing by Api::V1::SheltersController#update as HTML
+  Parameters: {"shelter"=>{"name"=>"Blue Coop"}, "id"=>"20"}
+  [1m[36mShelter Load (0.2ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Update (0.4ms)[0m  [1m[33mUPDATE "shelters" SET "name" = $1, "updated_at" = $2 WHERE "shelters"."id" = $3[0m  [["name", "Blue Coop"], ["updated_at", "2024-02-21 21:43:29.178058"], ["id", 20]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.7ms | Allocations: 1724)
+  [1m[36mShelter Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" ORDER BY "shelters"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/shelters" for 127.0.0.1 at 2024-02-21 14:43:29 -0700
+Processing by Api::V1::SheltersController#create as HTML
+  Parameters: {"shelter"=>{"name"=>"Red Barn"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Create (0.3ms)[0m  [1m[32mINSERT INTO "shelters" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Red Barn"], ["created_at", "2024-02-21 21:43:29.183686"], ["updated_at", "2024-02-21 21:43:29.183686"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 1ms (Views: 0.0ms | ActiveRecord: 0.5ms | Allocations: 594)
+  [1m[36mShelter Load (0.2ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" ORDER BY "shelters"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mAnimal Count (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "animals"[0m
+Started POST "/api/v1/shelters/21/animals" for 127.0.0.1 at 2024-02-21 14:43:29 -0700
+Processing by Api::V1::AnimalsController#create as HTML
+  Parameters: {"animal"=>{"shelter_id"=>21, "name"=>"Huck", "type"=>"Chicken", "birthday"=>nil, "color"=>nil, "slogan"=>nil, "diet"=>nil, "speed"=>nil}, "shelter_id"=>"21"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 294)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mShelter Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+Started POST "/api/v1/shelters" for 127.0.0.1 at 2024-02-21 14:43:29 -0700
+Processing by Api::V1::SheltersController#create as HTML
+  Parameters: {"shelter"=>{"name"=>"Red Barn"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Create (0.3ms)[0m  [1m[32mINSERT INTO "shelters" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Red Barn"], ["created_at", "2024-02-21 21:43:29.202440"], ["updated_at", "2024-02-21 21:43:29.202440"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 595)
+  [1m[36mShelter Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" ORDER BY "shelters"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/shelters" for 127.0.0.1 at 2024-02-21 14:43:29 -0700
+Processing by Api::V1::SheltersController#create as HTML
+  Parameters: {"shelter"=>{"name"=>"Red Barn"}}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Create (0.2ms)[0m  [1m[32mINSERT INTO "shelters" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Red Barn"], ["created_at", "2024-02-21 21:43:29.205136"], ["updated_at", "2024-02-21 21:43:29.205136"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 1ms (Views: 0.0ms | ActiveRecord: 0.3ms | Allocations: 594)
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" ORDER BY "shelters"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mShelter Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+Started PATCH "/api/v1/shelters/23" for 127.0.0.1 at 2024-02-21 14:43:29 -0700
+Processing by Api::V1::SheltersController#update as HTML
+  Parameters: {"shelter"=>{"name"=>"Blue Coop"}, "id"=>"23"}
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Update (0.2ms)[0m  [1m[33mUPDATE "shelters" SET "name" = $1, "updated_at" = $2 WHERE "shelters"."id" = $3[0m  [["name", "Blue Coop"], ["updated_at", "2024-02-21 21:43:29.206952"], ["id", 23]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 1ms (Views: 0.0ms | ActiveRecord: 0.4ms | Allocations: 642)
+  [1m[36mShelter Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" ORDER BY "shelters"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (38.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS "chicken_tracker_be_test"[0m
+  [1m[35m (39.7ms)[0m  [1m[35mCREATE DATABASE "chicken_tracker_be_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "animals" CASCADE[0m
+  [1m[35m (3.2ms)[0m  [1m[35mCREATE TABLE "animals" ("id" bigserial primary key, "name" character varying, "species" character varying, "birthday" character varying, "color" character varying, "slogan" character varying, "diet" character varying, "speed" character varying, "shelter_id" bigint, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE INDEX "index_animals_on_shelter_id" ON "animals" ("shelter_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "shelters" CASCADE[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "shelters" ("id" bigserial primary key, "name" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "animals" ADD CONSTRAINT "fk_rails_05a33b8800"
+FOREIGN KEY ("shelter_id")
+  REFERENCES "shelters" ("id")
+[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20240220232207)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20240220232202);[0m
+  [1m[35m (12.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'test', '2024-02-21 21:45:32.468408', '2024-02-21 21:45:32.468410') RETURNING "key"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('schema_sha1', '60b11cb21bf9cc448d4f4c0e571eb04db65afd2d', '2024-02-21 21:45:32.469345', '2024-02-21 21:45:32.469346') RETURNING "key"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (6.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mShelter Count (1.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+Started POST "/api/v1/shelters" for 127.0.0.1 at 2024-02-21 14:45:32 -0700
+Processing by Api::V1::SheltersController#create as HTML
+  Parameters: {"shelter"=>{"name"=>"Red Barn"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Create (0.9ms)[0m  [1m[32mINSERT INTO "shelters" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Red Barn"], ["created_at", "2024-02-21 21:45:32.628992"], ["updated_at", "2024-02-21 21:45:32.628992"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 1.1ms | Allocations: 6018)
+  [1m[36mShelter Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+  [1m[36mShelter Load (0.2ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" ORDER BY "shelters"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/shelters" for 127.0.0.1 at 2024-02-21 14:45:32 -0700
+Processing by Api::V1::SheltersController#create as HTML
+  Parameters: {"shelter"=>{"name"=>"Red Barn"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Create (0.3ms)[0m  [1m[32mINSERT INTO "shelters" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Red Barn"], ["created_at", "2024-02-21 21:45:32.635242"], ["updated_at", "2024-02-21 21:45:32.635242"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.5ms | Allocations: 597)
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" ORDER BY "shelters"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mShelter Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+Started PATCH "/api/v1/shelters/2" for 127.0.0.1 at 2024-02-21 14:45:32 -0700
+Processing by Api::V1::SheltersController#update as HTML
+  Parameters: {"shelter"=>{"name"=>"Blue Coop"}, "id"=>"2"}
+  [1m[36mShelter Load (0.2ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Update (0.4ms)[0m  [1m[33mUPDATE "shelters" SET "name" = $1, "updated_at" = $2 WHERE "shelters"."id" = $3[0m  [["name", "Blue Coop"], ["updated_at", "2024-02-21 21:45:32.638505"], ["id", 2]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 2ms (Views: 0.0ms | ActiveRecord: 0.7ms | Allocations: 1745)
+  [1m[36mShelter Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" ORDER BY "shelters"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/shelters" for 127.0.0.1 at 2024-02-21 14:45:32 -0700
+Processing by Api::V1::SheltersController#create as HTML
+  Parameters: {"shelter"=>{"name"=>"Red Barn"}}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Create (0.2ms)[0m  [1m[32mINSERT INTO "shelters" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Red Barn"], ["created_at", "2024-02-21 21:45:32.640763"], ["updated_at", "2024-02-21 21:45:32.640763"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 1ms (Views: 0.0ms | ActiveRecord: 0.2ms | Allocations: 594)
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" ORDER BY "shelters"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mAnimal Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "animals"[0m
+Started POST "/api/v1/shelters/3/animals" for 127.0.0.1 at 2024-02-21 14:45:32 -0700
+Processing by Api::V1::AnimalsController#create as HTML
+  Parameters: {"animal"=>{"shelter_id"=>3, "name"=>"Huck", "species"=>"Chicken", "birthday"=>nil, "color"=>nil, "slogan"=>nil, "diet"=>nil, "speed"=>nil}, "shelter_id"=>"3"}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 521)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mShelter Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+Started POST "/api/v1/shelters" for 127.0.0.1 at 2024-02-21 14:45:32 -0700
+Processing by Api::V1::SheltersController#create as HTML
+  Parameters: {"shelter"=>{"name"=>"Red Barn"}}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Create (0.2ms)[0m  [1m[32mINSERT INTO "shelters" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Red Barn"], ["created_at", "2024-02-21 21:45:32.644250"], ["updated_at", "2024-02-21 21:45:32.644250"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 1ms (Views: 0.0ms | ActiveRecord: 0.3ms | Allocations: 594)
+  [1m[36mShelter Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" ORDER BY "shelters"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/shelters" for 127.0.0.1 at 2024-02-21 14:45:32 -0700
+Processing by Api::V1::SheltersController#create as HTML
+  Parameters: {"shelter"=>{"name"=>"Red Barn"}}
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Create (2.9ms)[0m  [1m[32mINSERT INTO "shelters" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Red Barn"], ["created_at", "2024-02-21 21:45:32.650175"], ["updated_at", "2024-02-21 21:45:32.650175"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 3.5ms | Allocations: 594)
+  [1m[36mShelter Load (0.8ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" ORDER BY "shelters"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mShelter Count (1.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+Started PATCH "/api/v1/shelters/5" for 127.0.0.1 at 2024-02-21 14:45:32 -0700
+Processing by Api::V1::SheltersController#update as HTML
+  Parameters: {"shelter"=>{"name"=>"Blue Coop"}, "id"=>"5"}
+  [1m[36mShelter Load (3.1ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Update (1.7ms)[0m  [1m[33mUPDATE "shelters" SET "name" = $1, "updated_at" = $2 WHERE "shelters"."id" = $3[0m  [["name", "Blue Coop"], ["updated_at", "2024-02-21 21:45:32.665689"], ["id", 5]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 8ms (Views: 1.2ms | ActiveRecord: 5.2ms | Allocations: 642)
+  [1m[36mShelter Count (9.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+  [1m[36mShelter Load (0.3ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" ORDER BY "shelters"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mShelter Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+Started POST "/api/v1/shelters" for 127.0.0.1 at 2024-02-21 14:46:01 -0700
+Processing by Api::V1::SheltersController#create as HTML
+  Parameters: {"shelter"=>{"name"=>"Red Barn"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Create (2.6ms)[0m  [1m[32mINSERT INTO "shelters" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Red Barn"], ["created_at", "2024-02-21 21:46:01.073708"], ["updated_at", "2024-02-21 21:46:01.073708"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 10ms (Views: 0.1ms | ActiveRecord: 2.8ms | Allocations: 5952)
+  [1m[36mShelter Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" ORDER BY "shelters"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/shelters" for 127.0.0.1 at 2024-02-21 14:46:01 -0700
+Processing by Api::V1::SheltersController#create as HTML
+  Parameters: {"shelter"=>{"name"=>"Red Barn"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Create (0.4ms)[0m  [1m[32mINSERT INTO "shelters" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Red Barn"], ["created_at", "2024-02-21 21:46:01.082034"], ["updated_at", "2024-02-21 21:46:01.082034"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.5ms | Allocations: 597)
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" ORDER BY "shelters"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mShelter Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+Started PATCH "/api/v1/shelters/7" for 127.0.0.1 at 2024-02-21 14:46:01 -0700
+Processing by Api::V1::SheltersController#update as HTML
+  Parameters: {"shelter"=>{"name"=>"Blue Coop"}, "id"=>"7"}
+  [1m[36mShelter Load (0.2ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Update (0.4ms)[0m  [1m[33mUPDATE "shelters" SET "name" = $1, "updated_at" = $2 WHERE "shelters"."id" = $3[0m  [["name", "Blue Coop"], ["updated_at", "2024-02-21 21:46:01.085635"], ["id", 7]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 2ms (Views: 0.0ms | ActiveRecord: 0.7ms | Allocations: 1724)
+  [1m[36mShelter Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" ORDER BY "shelters"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/shelters" for 127.0.0.1 at 2024-02-21 14:46:01 -0700
+Processing by Api::V1::SheltersController#create as HTML
+  Parameters: {"shelter"=>{"name"=>"Red Barn"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Create (0.3ms)[0m  [1m[32mINSERT INTO "shelters" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Red Barn"], ["created_at", "2024-02-21 21:46:01.087999"], ["updated_at", "2024-02-21 21:46:01.087999"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 1ms (Views: 0.0ms | ActiveRecord: 0.5ms | Allocations: 594)
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" ORDER BY "shelters"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mAnimal Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "animals"[0m
+Started POST "/api/v1/shelters/8/animals" for 127.0.0.1 at 2024-02-21 14:46:01 -0700
+Processing by Api::V1::AnimalsController#create as HTML
+  Parameters: {"animal"=>{"shelter_id"=>8, "name"=>"Huck", "species"=>"Chicken", "birthday"=>nil, "color"=>nil, "slogan"=>nil, "diet"=>nil, "speed"=>nil}, "shelter_id"=>"8"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mAnimal Create (1.3ms)[0m  [1m[32mINSERT INTO "animals" ("name", "species", "birthday", "color", "slogan", "diet", "speed", "shelter_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["name", "Huck"], ["species", "Chicken"], ["birthday", nil], ["color", nil], ["slogan", nil], ["diet", nil], ["speed", nil], ["shelter_id", 8], ["created_at", "2024-02-21 21:46:01.092560"], ["updated_at", "2024-02-21 21:46:01.092560"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 1.5ms | Allocations: 2626)
+  [1m[36mAnimal Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "animals"[0m
+  [1m[36mAnimal Load (0.1ms)[0m  [1m[34mSELECT "animals".* FROM "animals" ORDER BY "animals"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mAnimal Load (0.3ms)[0m  [1m[34mSELECT "animals".* FROM "animals" ORDER BY "animals"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mAnimal Load (0.2ms)[0m  [1m[34mSELECT "animals".* FROM "animals" WHERE "animals"."shelter_id" = $1[0m  [["shelter_id", 8]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mShelter Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+Started POST "/api/v1/shelters" for 127.0.0.1 at 2024-02-21 14:46:01 -0700
+Processing by Api::V1::SheltersController#create as HTML
+  Parameters: {"shelter"=>{"name"=>"Red Barn"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Create (0.4ms)[0m  [1m[32mINSERT INTO "shelters" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Red Barn"], ["created_at", "2024-02-21 21:46:01.111768"], ["updated_at", "2024-02-21 21:46:01.111768"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.5ms | Allocations: 596)
+  [1m[36mShelter Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+  [1m[36mShelter Load (0.2ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" ORDER BY "shelters"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/api/v1/shelters" for 127.0.0.1 at 2024-02-21 14:46:01 -0700
+Processing by Api::V1::SheltersController#create as HTML
+  Parameters: {"shelter"=>{"name"=>"Red Barn"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Create (1.5ms)[0m  [1m[32mINSERT INTO "shelters" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Red Barn"], ["created_at", "2024-02-21 21:46:01.121763"], ["updated_at", "2024-02-21 21:46:01.121763"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 1.6ms | Allocations: 594)
+  [1m[36mShelter Load (1.3ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" ORDER BY "shelters"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mShelter Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+Started PATCH "/api/v1/shelters/10" for 127.0.0.1 at 2024-02-21 14:46:01 -0700
+Processing by Api::V1::SheltersController#update as HTML
+  Parameters: {"shelter"=>{"name"=>"Blue Coop"}, "id"=>"10"}
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mShelter Update (0.2ms)[0m  [1m[33mUPDATE "shelters" SET "name" = $1, "updated_at" = $2 WHERE "shelters"."id" = $3[0m  [["name", "Blue Coop"], ["updated_at", "2024-02-21 21:46:01.130089"], ["id", 10]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 1ms (Views: 0.0ms | ActiveRecord: 0.4ms | Allocations: 643)
+  [1m[36mShelter Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "shelters"[0m
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters" ORDER BY "shelters"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m

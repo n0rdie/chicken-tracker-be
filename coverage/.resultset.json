@@ -1,7 +1,24 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/quinnordmark/Desktop/Turing/3mod/4week/chicken-tracker-backend/app/models/animal.rb": {
+      "/Users/quinnordmark/Desktop/Turing/3mod/4week/chicken-tracker-be/app/models/animal.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          1,
+          null
+        ]
+      },
+      "/Users/quinnordmark/Desktop/Turing/3mod/4week/chicken-tracker-be/app/models/application_record.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/quinnordmark/Desktop/Turing/3mod/4week/chicken-tracker-be/app/models/shelter.rb": {
         "lines": [
           1,
           1,
@@ -10,14 +27,38 @@
           null
         ]
       },
-      "/Users/quinnordmark/Desktop/Turing/3mod/4week/chicken-tracker-backend/app/models/application_record.rb": {
+      "/Users/quinnordmark/Desktop/Turing/3mod/4week/chicken-tracker-be/app/controllers/api/v1/shelters_controller.rb": {
         "lines": [
           1,
+          1,
+          5,
+          5,
+          5,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          2,
+          2,
+          null,
+          null,
+          1,
+          null,
+          1,
+          7,
+          null,
+          null
+        ]
+      },
+      "/Users/quinnordmark/Desktop/Turing/3mod/4week/chicken-tracker-be/app/controllers/application_controller.rb": {
+        "lines": [
           1,
           null
         ]
       },
-      "/Users/quinnordmark/Desktop/Turing/3mod/4week/chicken-tracker-backend/app/models/shelter.rb": {
+      "/Users/quinnordmark/Desktop/Turing/3mod/4week/chicken-tracker-be/app/serializers/shelter_serializer.rb": {
         "lines": [
           1,
           1,
@@ -26,64 +67,53 @@
           null
         ]
       },
-      "/Users/quinnordmark/Desktop/Turing/3mod/4week/chicken-tracker-backend/app/controllers/api/v1/shelters_controller.rb": {
+      "/Users/quinnordmark/Desktop/Turing/3mod/4week/chicken-tracker-be/app/facades/shelter_updater.rb": {
         "lines": [
           1,
           1,
           2,
+          null,
           2,
-          2,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          1,
-          1,
-          null,
-          null,
-          1,
-          null,
-          1,
-          3,
-          null,
-          null
-        ]
-      },
-      "/Users/quinnordmark/Desktop/Turing/3mod/4week/chicken-tracker-backend/app/controllers/application_controller.rb": {
-        "lines": [
-          1,
-          null
-        ]
-      },
-      "/Users/quinnordmark/Desktop/Turing/3mod/4week/chicken-tracker-backend/app/serializers/shelter_serializer.rb": {
-        "lines": [
-          1,
-          1,
-          null,
-          1,
-          null
-        ]
-      },
-      "/Users/quinnordmark/Desktop/Turing/3mod/4week/chicken-tracker-backend/app/facades/shelter_updater.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          null,
-          1,
           0,
-          1,
-          1,
+          2,
+          2,
           null,
           0,
           null,
           null,
+          null
+        ]
+      },
+      "/Users/quinnordmark/Desktop/Turing/3mod/4week/chicken-tracker-be/app/controllers/api/v1/animals_controller.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/quinnordmark/Desktop/Turing/3mod/4week/chicken-tracker-be/app/serializers/animal_serializer.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
           null
         ]
       }
     },
-    "timestamp": 1708543859
+    "timestamp": 1708551961
   }
 }
