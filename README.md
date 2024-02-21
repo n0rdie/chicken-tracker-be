@@ -17,36 +17,37 @@ Welcome Page
 Story 2
 Sign Up
 
-When a POST User is sent with correct information
-A new User is created and saved
-And the new User has all the info sent with post
-And the password is encrypted
+<unapplicable>
 ```
 ```
 Story 3
 Sign Up [SAD] -- Non-unique name
 
-When a POST User is sent with a non unique name
-A new User is not created or saved
-And a error is returned
+<unapplicable>
 ```
 ```
 Story 4
 Sign Up [SAD] -- Non matching password / password confirmation
 
-When a POST User is sent with a non matching password confirmation
-A new User is not created or saved
-And a error is returned
+<unapplicable>
 ```
 ```
 Story 5
 Sign In
 
-come back later
+<unapplicable>
 ```
 ```
 Story 6
 Sign In [SAD] -- Wrong sign in information
 
-come back later
+<unapplicable>
+```
+```
+Story 7
+Sign In [SAD] -- Wrong sign in information
+
+# When a POST Shelter is sent with correct information
+# A new Shelter is created and saved
+# And the new Shelter has all the info sent with post
 ```
