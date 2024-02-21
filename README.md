@@ -45,7 +45,7 @@ Sign In [SAD] -- Wrong sign in information
 ```
 ```
 Story 7
-Sign In [SAD] -- Wrong sign in information
+Create Shelter
 
 # When a POST Shelter is sent with correct information
 # A new Shelter is created and saved
