@@ -16,6 +16,12 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_20_232207) do
 
   create_table "animals", force: :cascade do |t|
     t.string "name"
+    t.string "species"
+    t.string "birthday"
+    t.string "color"
+    t.string "slogan"
+    t.string "diet"
+    t.string "speed"
     t.bigint "shelter_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

@@ -9,7 +9,9 @@ Rails.application.routes.draw do
   # root "posts#index"
   namespace :api do
     namespace :v1 do
-      resources :shelters, only: [:create, :update]
+      resources :shelters, only: [:create, :update] do
+        resources :animals, only: [:create]
+      end
     end
   end
 end

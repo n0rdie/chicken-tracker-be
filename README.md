@@ -29,22 +29,21 @@ This application uses the [Animals API](https://api-ninjas.com/api/animals) by a
 Download both our [front end](https://github.com/shawndcarpenter/third_space_fe) and [back end](https://github.com/shawndcarpenter/third_space_be) applications.
 
 Start the server on the back end and front end applications by typing the following in the terminal of both.
-
-```sh
-rails s
-```
+  ```sh
+  rails s
+  ```
 
 NOTE: On a local host, back-end application should be running on PORT 3000, while the front-end application should be running on PORT 5000.
 
 Run the following code in your terminal to install the gems required to use this application:
-```sh
-bundle install
-```
+  ```sh
+  bundle install
+  ```
 
 Check to make sure all the tests are passing by running the following code in your terminal:
-```sh
-bundle exec rspec
-```
+  ```sh
+  bundle exec rspec
+  ```
 
 ## Gems Used
 - [Omniauth](https://github.com/omniauth/omniauth) was used for Oauth. 
