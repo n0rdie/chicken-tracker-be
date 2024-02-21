@@ -52,3 +52,25 @@ Create Shelter
 # A new Shelter is created and saved
 # And the new Shelter has all the info sent with post
 ```
+```
+Story 6
+Sign In [SAD] -- Wrong sign in information
+
+<unapplicable>
+```
+```
+Story 7
+Create Shelter
+
+# When a POST Shelter is sent with correct information
+# A new Shelter is created and saved
+# And the new Shelter has all the info sent with post
+```
+```
+Story 8
+Update Shelter
+
+# When a PATCH Shelter is sent with correct information
+# The Shelter is updated and saved
+# And the new Shelter has all the info sent with PATCH
+```

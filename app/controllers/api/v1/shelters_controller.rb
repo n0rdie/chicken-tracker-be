@@ -8,6 +8,11 @@ class Api::V1::SheltersController < ApplicationController
         end
     end
 
+    def update
+        result = ShelterUpdater.update(params[:id], shelter_params)
+        render result
+    end
+
     private
 
     def shelter_params
