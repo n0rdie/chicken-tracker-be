@@ -26,8 +26,9 @@ RSpec.describe "Api::V1::Shelters", type: :request do
 
         # When a PATCH Shelter is sent with correct information
         update_shelter_data = ({ "name": "Blue Coop" })
-        patch "/api/v1/shelters", headers: {"CONTENT_TYPE" => "application/json"}, params: JSON.generate(shelter: update_shelter_data)
+        patch "/api/v1/shelters/#{shelter.id}", headers: {"CONTENT_TYPE" => "application/json"}, params: JSON.generate(shelter: update_shelter_data)
         # The Shelter is updated and saved
+        expect(response).to have_http_status(:success)
         expect(Shelter.all.count).to eq(original_num_shelters)
         # And the new Shelter has all the info sent with PATCH
         expect(Shelter.last.name).to eq("Blue Coop")
