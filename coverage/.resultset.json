@@ -38,15 +38,42 @@
           null
         ]
       },
+      "/Users/quinnordmark/Desktop/Turing/3mod/4week/chicken-tracker-backend/app/controllers/api/v1/users_controller.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
       "/Users/quinnordmark/Desktop/Turing/3mod/4week/chicken-tracker-backend/app/controllers/application_controller.rb": {
         "lines": [
-          0,
-          0
-        ],
-        "branches": {
-        }
+          1,
+          null
+        ]
+      },
+      "/Users/quinnordmark/Desktop/Turing/3mod/4week/chicken-tracker-backend/app/serializers/user_serializer.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          null
+        ]
       }
     },
-    "timestamp": 1708471801
+    "timestamp": 1708537237
   }
 }
