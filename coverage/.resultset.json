@@ -23,22 +23,10 @@
           1,
           null,
           1,
-          1,
           null
         ]
       },
-      "/Users/quinnordmark/Desktop/Turing/3mod/4week/chicken-tracker-backend/app/models/user.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          null,
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/quinnordmark/Desktop/Turing/3mod/4week/chicken-tracker-backend/app/controllers/api/v1/users_controller.rb": {
+      "/Users/quinnordmark/Desktop/Turing/3mod/4week/chicken-tracker-backend/app/controllers/api/v1/shelters_controller.rb": {
         "lines": [
           1,
           1,
@@ -64,7 +52,7 @@
           null
         ]
       },
-      "/Users/quinnordmark/Desktop/Turing/3mod/4week/chicken-tracker-backend/app/serializers/user_serializer.rb": {
+      "/Users/quinnordmark/Desktop/Turing/3mod/4week/chicken-tracker-backend/app/serializers/shelter_serializer.rb": {
         "lines": [
           1,
           1,
@@ -74,6 +62,6 @@
         ]
       }
     },
-    "timestamp": 1708537237
+    "timestamp": 1708541055
   }
 }

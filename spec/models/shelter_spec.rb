@@ -6,7 +6,6 @@ RSpec.describe Shelter, type: :model do
   end
 
   describe 'associations' do
-    it { should belong_to(:user) }
     it { should have_many(:animals) }
   end
 end
