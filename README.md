@@ -60,3 +60,13 @@ Update Shelter
 # The Shelter is updated and saved
 # And the new Shelter has all the info sent with PATCH
 ```
+## Animals
+```
+Story 9
+Create Animal
+
+# When a POST Animal is sent with correct information
+# A new Animal is created and saved
+# And the new Animal has all the info sent with post
+# And you can get the Animal from its Shelter
+```
