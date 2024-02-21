@@ -9,36 +9,53 @@
 
 ```
 Story 1
-Guest Show
+Welcome Page
 
-As a visitor
-When I visit a guest's show page
-I see the guest's name
-And I see a list of all the rooms they've stayed in
-including the room's suite, nightly rate, and the name of the hotel that it belongs to.
+<unapplicable>
 ```
-
 ```
 Story 2
-Add a Guest to a Room
+Sign Up
 
-As a visitor
-When I visit a guest's show page
-Then I see a form to add a room to this guest.
-When I fill in a field with the id of an existing room
-And I click submit
-Then I am redirected back to the guest's show page
-And I see the room now listed under this guest's rooms.
-(You do not have to test for a sad path, for example if the ID submitted is not an existing room)
+<unapplicable>
 ```
-
 ```
 Story 3
-Rooms Index
+Sign Up [SAD] -- Non-unique name
 
-As a visitor
-When I visit the rooms index page
-Then I see a list of all rooms
-including the room's suite, nightly rate, and the name of the hotel that it belongs to
-and the number of guests that have stayed in that room.
+<unapplicable>
+```
+```
+Story 4
+Sign Up [SAD] -- Non matching password / password confirmation
+
+<unapplicable>
+```
+```
+Story 5
+Sign In
+
+<unapplicable>
+```
+```
+Story 6
+Sign In [SAD] -- Wrong sign in information
+
+<unapplicable>
+```
+```
+Story 7
+Create Shelter
+
+# When a POST Shelter is sent with correct information
+# A new Shelter is created and saved
+# And the new Shelter has all the info sent with post
+```
+```
+Story 8
+Update Shelter
+
+# When a PATCH Shelter is sent with correct information
+# The Shelter is updated and saved
+# And the new Shelter has all the info sent with PATCH
 ```
