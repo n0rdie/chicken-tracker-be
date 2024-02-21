@@ -40,13 +40,13 @@
           null,
           1,
           1,
-          0,
+          1,
           null,
           null,
           1,
           null,
           1,
-          2,
+          3,
           null,
           null
         ]
@@ -65,8 +65,25 @@
           1,
           null
         ]
+      },
+      "/Users/quinnordmark/Desktop/Turing/3mod/4week/chicken-tracker-backend/app/facades/shelter_updater.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          1,
+          0,
+          1,
+          1,
+          null,
+          0,
+          null,
+          null,
+          null
+        ]
       }
     },
-    "timestamp": 1708543192
+    "timestamp": 1708543859
   }
 }
