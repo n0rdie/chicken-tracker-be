@@ -60,6 +60,8 @@ RSpec.describe "Api::V1::Shelters", type: :request do
 
         # And the new Animal has all the info sent with post
         expect(Animal.last.name).to eq("Huck")
+        expect(Animal.last.species).to eq("Chicken")
+        expect(Animal.last.speed).to eq(nil)
 
         # And you can get the Animal from its Shelter
         expect(shelter.animals).to eq([Animal.last])
