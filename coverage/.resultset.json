@@ -68,6 +68,19 @@
           1,
           null,
           1,
+          null,
+          1,
+          null
+        ]
+      },
+      "/Users/quinnordmark/Desktop/Turing/3mod/4week/chicken-tracker-be/app/serializers/animal_serializer.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
           null
         ]
       },
@@ -97,15 +110,6 @@
           1,
           6,
           null,
-          null
-        ]
-      },
-      "/Users/quinnordmark/Desktop/Turing/3mod/4week/chicken-tracker-be/app/serializers/animal_serializer.rb": {
-        "lines": [
-          1,
-          1,
-          null,
-          1,
           null
         ]
       },
@@ -170,6 +174,6 @@
         ]
       }
     },
-    "timestamp": 1708574865
+    "timestamp": 1708621787
   }
 }

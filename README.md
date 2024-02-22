@@ -94,3 +94,11 @@ Delete Animal
 # The Animal is deleted
 # And the Animal's Shelter does not have the Animal
 ```
+```
+Story 13
+Animal Index
+
+# When a DELETE Animal is sent with a valid :id
+# The Animal is deleted
+# And the Animal's Shelter does not have the Animal
+```
