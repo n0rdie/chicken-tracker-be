@@ -33,4 +33,25 @@ RSpec.describe "Api::V1::Shelters", type: :request do
         # And the new Shelter has all the info sent with PATCH
         expect(Shelter.last.name).to eq("Blue Coop")
     end
+
+    it "12: Shelter Destroy" do
+        new_shelter_data = ({ "name": "Red Barn" })
+        post "/api/v1/shelters", headers: {"CONTENT_TYPE" => "application/json"}, params: JSON.generate(shelter: new_shelter_data)
+        shelter = Shelter.last
+        new_animal_data = ({ "shelter_id": Shelter.last.id, "name": "Huck", "species": "Chicken", "birthday": nil, "color": nil, "slogan": nil, "diet": nil, "speed": nil })
+        post "/api/v1/shelters/#{Shelter.last.id}/animals", headers: {"CONTENT_TYPE" => "application/json"}, params: JSON.generate(animal: new_animal_data)
+        original_num_animals = Animal.all.count
+        original_num_shelters = Shelter.all.count
+
+        # When a DELETE Shelter is sent with a valid :id
+        delete "/api/v1/shelters/#{shelter.id}", headers: {"CONTENT_TYPE" => "application/json"}
+        # The Shelter is deleted
+        expect(response).to have_http_status(:success)
+        expect(Shelter.all.count).to eq(original_num_shelters-1)
+        update_shelter_data = ({ "name": "Blue Coop" })
+        patch "/api/v1/shelters/#{shelter.id}", headers: {"CONTENT_TYPE" => "application/json"}, params: JSON.generate(shelter: update_shelter_data)
+        expect(response).to have_http_status(:not_found)
+        # And all the Animals in the Shelter are also deleted
+        expect(Animal.all.count).to eq(original_num_animals-1)
+    end
 end
