@@ -1,6 +1,29 @@
 require "rails_helper"
 
 RSpec.describe "Api::V1::Shelters", type: :request do
+    it "13: Animal Show" do
+        new_shelter_data = ({ "name": "Red Barn" })
+        post "/api/v1/shelters", headers: {"CONTENT_TYPE" => "application/json"}, params: JSON.generate(shelter: new_shelter_data)
+        shelter = Shelter.last
+
+        new_animal_data = ({ "shelter_id": shelter.id, "name": "Huck", "species": "Chicken", "top_speed": "30 mph" })
+        post "/api/v1/shelters/#{shelter.id}/animals", headers: {"CONTENT_TYPE" => "application/json"}, params: JSON.generate(animal: new_animal_data)
+        animal = Animal.last
+
+        # When a GET Animal is sent with a valid :id
+        get "/api/v1/shelters/#{shelter.id}/animals/#{animal.id}", headers: {"CONTENT_TYPE" => "application/json"}
+        expect(response).to have_http_status(:success)
+        # The Animal's data is returned
+        json_response = JSON.parse(response.body)
+
+        expect(json_response['data']['id']).to eq(animal.id)
+        expect(json_response['data']['type']).to eq('Animal')
+        expect(json_response['data']['attributes']['name']).to eq('Huck')
+        expect(json_response['data']['attributes']['species']).to eq('Chicken')
+        expect(json_response['data']['attributes']['top_speed']).to eq('30 mph')
+        expect(json_response['data']['attributes']['color']).to eq(nil)
+    end
+
     it "9: Animal Create" do
         new_shelter_data = ({ "name": "Red Barn" })
         post "/api/v1/shelters", headers: {"CONTENT_TYPE" => "application/json"}, params: JSON.generate(shelter: new_shelter_data)
