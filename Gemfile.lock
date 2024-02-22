@@ -130,7 +130,7 @@ GEM
     nio4r (2.7.0)
     nokogiri (1.16.2-arm64-darwin)
       racc (~> 1.4)
-    pg (1.5.5)
+    pg (1.5.4)
     pry (0.14.2)
       coderay (~> 1.1)
       method_source (~> 1.0)
@@ -219,7 +219,7 @@ GEM
     zeitwerk (2.6.13)
 
 PLATFORMS
-  arm64-darwin
+  arm64-darwin-22
 
 DEPENDENCIES
   bcrypt
@@ -239,4 +239,4 @@ RUBY VERSION
    ruby 3.2.2p53
 
 BUNDLED WITH
-   2.5.4
+   2.4.22
