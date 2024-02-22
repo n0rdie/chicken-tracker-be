@@ -12,12 +12,7 @@ RSpec.describe "Api::V1::Shelters", type: :request do
         new_animal_data = ({
             "shelter_id": shelter.id,
             "name": "Huck",
-            "species": "Chicken",
-            "birthday": nil,
-            "color": nil,
-            "slogan": nil,
-            "diet": nil,
-            "speed": nil
+            "species": "Chicken"
         })
         post "/api/v1/shelters/#{shelter.id}/animals", headers: {"CONTENT_TYPE" => "application/json"}, params: JSON.generate(animal: new_animal_data)
         
@@ -28,7 +23,7 @@ RSpec.describe "Api::V1::Shelters", type: :request do
         # And the new Animal has all the info sent with post
         expect(Animal.last.name).to eq("Huck")
         expect(Animal.last.species).to eq("Chicken")
-        expect(Animal.last.speed).to eq(nil)
+        expect(Animal.last.top_speed).to eq(nil)
 
         # And you can get the Animal from its Shelter
         expect(shelter.animals).to eq([Animal.last])
@@ -38,21 +33,16 @@ RSpec.describe "Api::V1::Shelters", type: :request do
         new_shelter_data = ({ "name": "Red Barn" })
         post "/api/v1/shelters", headers: {"CONTENT_TYPE" => "application/json"}, params: JSON.generate(shelter: new_shelter_data)
         shelter = Shelter.last
-        new_animal_data = ({ "shelter_id": shelter.id, "name": "Huck", "species": "Chicken", "birthday": nil, "color": nil, "slogan": nil, "diet": nil, "speed": nil })
+        new_animal_data = ({ shelter_id: shelter.id, name: "Huck", species: "Chicken", top_speed: nil })
         post "/api/v1/shelters/#{shelter.id}/animals", headers: {"CONTENT_TYPE" => "application/json"}, params: JSON.generate(animal: new_animal_data)
         animal = Animal.last
         original_num_animals = Animal.all.count
 
         # When a PATCH Animal is sent with correct information
         update_animal_data = ({
-            "shelter_id": shelter.id,
-            "name": "Chuck",
-            "species": "Chicken",
-            "birthday": nil,
-            "color": nil,
-            "slogan": nil,
-            "diet": nil,
-            "speed": "30 mph"
+            shelter_id: shelter.id,
+            name: "Chuck",
+            top_speed: "30 mph"
         })
         patch "/api/v1/shelters/#{shelter.id}/animals/#{animal.id}", headers: {"CONTENT_TYPE" => "application/json"}, params: JSON.generate(animal: update_animal_data)
 
@@ -64,14 +54,14 @@ RSpec.describe "Api::V1::Shelters", type: :request do
         expect(Animal.last.name).to eq("Chuck")
         expect(Animal.last.name).to_not eq("Huck")
         expect(Animal.last.species).to eq("Chicken")
-        expect(Animal.last.speed).to_not eq(nil)
-        expect(Animal.last.speed).to eq("30 mph")
+        expect(Animal.last.top_speed).to_not eq(nil)
+        expect(Animal.last.top_speed).to eq("30 mph")
     end
 
     it "11: Animal Destroy" do
         new_shelter_data = ({ "name": "Red Barn" })
         post "/api/v1/shelters", headers: {"CONTENT_TYPE" => "application/json"}, params: JSON.generate(shelter: new_shelter_data)
-        new_animal_data = ({ "shelter_id": Shelter.last.id, "name": "Huck", "species": "Chicken", "birthday": nil, "color": nil, "slogan": nil, "diet": nil, "speed": nil })
+        new_animal_data = ({ "shelter_id": Shelter.last.id, "name": "Huck", "species": "Chicken", "birthday": nil, "color": nil, "diet": nil, "top_speed": nil })
         post "/api/v1/shelters/#{Shelter.last.id}/animals", headers: {"CONTENT_TYPE" => "application/json"}, params: JSON.generate(animal: new_animal_data)
         animal = Animal.last
         original_num_animals = Animal.all.count
@@ -81,7 +71,7 @@ RSpec.describe "Api::V1::Shelters", type: :request do
         # The Animal is deleted
         expect(response).to have_http_status(:success)
         expect(Animal.all.count).to eq(original_num_animals-1)
-        update_animal_data = ({ "shelter_id": Shelter.last.id, "name": "Chuck", "species": "Chicken", "birthday": nil, "color": nil, "slogan": nil, "diet": nil, "speed": "30 mph" })
+        update_animal_data = ({ "shelter_id": Shelter.last.id, "name": "Chuck", "species": "Chicken", "birthday": nil, "color": nil, "diet": nil, "top_speed": "30 mph" })
         patch "/api/v1/shelters/#{Shelter.last.id}/animals/#{animal.id}", headers: {"CONTENT_TYPE" => "application/json"}, params: JSON.generate(animal: update_animal_data)
         expect(response).to have_http_status(:not_found)
         # And the Animal's Shelter does not have the Animal

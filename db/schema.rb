@@ -19,9 +19,16 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_20_232207) do
     t.string "species"
     t.string "birthday"
     t.string "color"
-    t.string "slogan"
+    t.string "main_prey"
+    t.string "habitat"
     t.string "diet"
-    t.string "speed"
+    t.string "skin_type"
+    t.string "top_speed"
+    t.string "avg_litter"
+    t.string "lifespan"
+    t.string "weight"
+    t.string "lifestyle"
+    t.string "fav_food"
     t.bigint "shelter_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
