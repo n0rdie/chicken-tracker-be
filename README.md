@@ -60,6 +60,14 @@ Update Shelter
 # The Shelter is updated and saved
 # And the new Shelter has all the info sent with PATCH
 ```
+```
+Story 12
+Delete Shelter
+
+# When a DELETE Shelter is sent with a valid :id
+# The Shelter is deleted
+# And all the Animals in the Shelter are also deleted
+```
 ## Animals
 ```
 Story 9

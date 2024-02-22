@@ -13,6 +13,10 @@ class Api::V1::SheltersController < ApplicationController
         render result
     end
 
+    def destroy
+        ShelterDestroyer.destroy(params[:id])
+    end
+
     private
 
     def shelter_params
