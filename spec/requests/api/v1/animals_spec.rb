@@ -68,7 +68,7 @@ RSpec.describe "Api::V1::Shelters", type: :request do
         expect(Animal.last.speed).to eq("30 mph")
     end
 
-    it "10: Animal Update" do
+    it "11: Animal Destroy" do
         new_shelter_data = ({ "name": "Red Barn" })
         post "/api/v1/shelters", headers: {"CONTENT_TYPE" => "application/json"}, params: JSON.generate(shelter: new_shelter_data)
         new_animal_data = ({ "shelter_id": Shelter.last.id, "name": "Huck", "species": "Chicken", "birthday": nil, "color": nil, "slogan": nil, "diet": nil, "speed": nil })
