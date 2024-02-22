@@ -5,9 +5,16 @@ class CreateAnimals < ActiveRecord::Migration[7.1]
       t.string :species
       t.string :birthday
       t.string :color
-      t.string :slogan
+      t.string :main_prey
+      t.string :habitat
       t.string :diet
-      t.string :speed
+      t.string :skin_type
+      t.string :top_speed
+      t.string :avg_litter
+      t.string :lifespan
+      t.string :weight
+      t.string :lifestyle
+      t.string :fav_food
 
       t.references :shelter, foreign_key: true
 

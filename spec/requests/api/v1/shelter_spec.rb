@@ -38,7 +38,7 @@ RSpec.describe "Api::V1::Shelters", type: :request do
         new_shelter_data = ({ "name": "Red Barn" })
         post "/api/v1/shelters", headers: {"CONTENT_TYPE" => "application/json"}, params: JSON.generate(shelter: new_shelter_data)
         shelter = Shelter.last
-        new_animal_data = ({ "shelter_id": Shelter.last.id, "name": "Huck", "species": "Chicken", "birthday": nil, "color": nil, "slogan": nil, "diet": nil, "speed": nil })
+        new_animal_data = ({ "shelter_id": Shelter.last.id, "name": "Huck", "species": "Chicken", "birthday": nil, "color": nil, "diet": nil, "top_speed": nil })
         post "/api/v1/shelters/#{Shelter.last.id}/animals", headers: {"CONTENT_TYPE" => "application/json"}, params: JSON.generate(animal: new_animal_data)
         original_num_animals = Animal.all.count
         original_num_shelters = Shelter.all.count
