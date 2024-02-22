@@ -75,6 +75,14 @@ Story 10
 Update Animal
 
 # When a PATCH Animal is sent with correct information
-# The Shelter is updated and saved
-# And the new Shelter has all the info sent with PATCH
+# The Animal is updated and saved
+# And the new Animal has all the info sent with PATCH
+```
+```
+Story 11
+Delete Animal
+
+# When a DELETE Animal is sent with a valid :id
+# The Animal is deleted
+# And the Animal's Shelter does not have the Animal
 ```

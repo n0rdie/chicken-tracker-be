@@ -13,6 +13,10 @@ class Api::V1::AnimalsController < ApplicationController
         render result
     end
 
+    def destroy
+        AnimalDestroyer.destroy(params[:id])
+    end
+
     private
 
     def animal_params
