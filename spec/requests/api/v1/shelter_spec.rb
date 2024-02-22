@@ -1,6 +1,27 @@
 require "rails_helper"
 
 RSpec.describe "Api::V1::Shelters", type: :request do
+    it "14: Shelter Show" do
+        new_shelter_data = ({ "name": "Red Barn" })
+        post "/api/v1/shelters", headers: {"CONTENT_TYPE" => "application/json"}, params: JSON.generate(shelter: new_shelter_data)
+        shelter = Shelter.last
+
+        new_animal_data = ({ "shelter_id": shelter.id, "name": "Huck", "species": "Chicken", "top_speed": "30 mph" })
+        post "/api/v1/shelters/#{shelter.id}/animals", headers: {"CONTENT_TYPE" => "application/json"}, params: JSON.generate(animal: new_animal_data)
+        animal = Animal.last
+
+        # When a GET Shelter is sent with a valid :id
+        get "/api/v1/shelters/#{shelter.id}", headers: {"CONTENT_TYPE" => "application/json"}
+        expect(response).to have_http_status(:success)
+        # The Shelter's data is returned
+        json_response = JSON.parse(response.body)
+
+        expect(json_response['data']['id']).to eq(shelter.id.to_s)
+        expect(json_response['data']['type']).to eq('shelter')
+        expect(json_response['data']['attributes']['name']).to eq('Red Barn')
+        expect(json_response['data']['relationships']['animals'][0]['data']['name']).to eq('Huck')
+    end
+
     it "7: Shelter Create" do
         original_num_shelters = Shelter.all.count
 
