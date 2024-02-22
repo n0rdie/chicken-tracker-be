@@ -8,6 +8,11 @@ class Api::V1::AnimalsController < ApplicationController
         end
     end
 
+    def update
+        result = AnimalUpdater.update(params[:id], animal_params)
+        render result
+    end
+
     private
 
     def animal_params
