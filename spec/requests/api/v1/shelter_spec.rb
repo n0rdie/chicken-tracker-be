@@ -19,7 +19,7 @@ RSpec.describe "Api::V1::Shelters", type: :request do
         expect(json_response['data']['id']).to eq(shelter.id.to_s)
         expect(json_response['data']['type']).to eq('shelter')
         expect(json_response['data']['attributes']['name']).to eq('Red Barn')
-        expect(json_response['data']['relationships']['animals'][0]['data']['name']).to eq('Huck')
+        expect(json_response['data']['relationships']['animals']['data'][0]['id'].to_i).to eq(animal.id)
     end
 
     it "7: Shelter Create" do
