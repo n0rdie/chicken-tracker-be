@@ -1,4 +1,10 @@
 class Api::V1::AnimalsController < ApplicationController
+    
+    def show
+        animal = Animal.find(params[:id])
+        render json: AnimalSerializer.new(animal)
+    end
+
     def create
         animal = Animal.create(animal_params)
         if animal.save

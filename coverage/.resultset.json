@@ -101,6 +101,12 @@
       "/Users/quinnordmark/Desktop/Turing/3mod/4week/chicken-tracker-be/app/controllers/api/v1/animals_controller.rb": {
         "lines": [
           1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
           1,
           5,
           5,
@@ -204,6 +210,6 @@
         ]
       }
     },
-    "timestamp": 1708625239
+    "timestamp": 1708625436
   }
 }

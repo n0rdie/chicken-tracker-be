@@ -16,8 +16,8 @@ RSpec.describe "Api::V1::Shelters", type: :request do
         # The Animal's data is returned
         json_response = JSON.parse(response.body)
 
-        expect(json_response['data']['id']).to eq(animal.id)
-        expect(json_response['data']['type']).to eq('Animal')
+        expect(json_response['data']['id']).to eq(animal.id.to_s)
+        expect(json_response['data']['type']).to eq('animal')
         expect(json_response['data']['attributes']['name']).to eq('Huck')
         expect(json_response['data']['attributes']['species']).to eq('Chicken')
         expect(json_response['data']['attributes']['top_speed']).to eq('30 mph')
