@@ -1,4 +1,9 @@
 class Api::V1::SheltersController < ApplicationController
+    def show
+        shelter = Shelter.find(params[:id])
+        render json: ShelterSerializer.new(shelter)
+    end
+
     def create
         shelter = Shelter.create(shelter_params)
         if shelter.save
