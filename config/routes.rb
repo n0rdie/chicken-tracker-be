@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :shelters, only: [:create, :update, :destroy] do
-        resources :animals, only: [:create, :update, :destroy]
+        resources :animals, only: [:create, :update, :destroy, :show]
       end
     end
   end
