@@ -2,7 +2,7 @@ require "rails_helper"
 
 RSpec.describe "Api::V1::Shelters", type: :request do
     it "14: Shelter Show" do
-        new_shelter_data = ({ "name": "Red Barn" })
+        new_shelter_data = ({ "name": "Red Barn", "user_id": "1" })
         post "/api/v1/shelters", headers: {"CONTENT_TYPE" => "application/json"}, params: JSON.generate(shelter: new_shelter_data)
         shelter = Shelter.last
 
@@ -27,7 +27,8 @@ RSpec.describe "Api::V1::Shelters", type: :request do
 
         # When a POST Shelter is sent with correct information
         new_shelter_data = ({
-            "name": "Red Barn"
+            "name": "Red Barn",
+            "user_id": "1"
         })
         post "/api/v1/shelters", headers: {"CONTENT_TYPE" => "application/json"}, params: JSON.generate(shelter: new_shelter_data)
 
@@ -37,10 +38,11 @@ RSpec.describe "Api::V1::Shelters", type: :request do
 
         # And the new Shelter has all the info sent with post
         expect(Shelter.last.name).to eq("Red Barn")
+        expect(Shelter.last.user_id).to eq(1)
     end
 
     it "8: Shelter Update" do
-        new_shelter_data = ({ "name": "Red Barn" })
+        new_shelter_data = ({ "name": "Red Barn", "user_id": "1" })
         post "/api/v1/shelters", headers: {"CONTENT_TYPE" => "application/json"}, params: JSON.generate(shelter: new_shelter_data)
         shelter = Shelter.last
         original_num_shelters = Shelter.all.count
@@ -56,7 +58,7 @@ RSpec.describe "Api::V1::Shelters", type: :request do
     end
 
     it "12: Shelter Destroy" do
-        new_shelter_data = ({ "name": "Red Barn" })
+        new_shelter_data = ({ "name": "Red Barn", "user_id": "1" })
         post "/api/v1/shelters", headers: {"CONTENT_TYPE" => "application/json"}, params: JSON.generate(shelter: new_shelter_data)
         shelter = Shelter.last
         new_animal_data = ({ "shelter_id": Shelter.last.id, "name": "Huck", "species": "Chicken", "birthday": nil, "color": nil, "diet": nil, "top_speed": nil })
@@ -69,7 +71,7 @@ RSpec.describe "Api::V1::Shelters", type: :request do
         # The Shelter is deleted
         expect(response).to have_http_status(:success)
         expect(Shelter.all.count).to eq(original_num_shelters-1)
-        update_shelter_data = ({ "name": "Blue Coop" })
+        update_shelter_data = ({ "name": "Blue Coop", "user_id": "1" })
         patch "/api/v1/shelters/#{shelter.id}", headers: {"CONTENT_TYPE" => "application/json"}, params: JSON.generate(shelter: update_shelter_data)
         expect(response).to have_http_status(:not_found)
         # And all the Animals in the Shelter are also deleted

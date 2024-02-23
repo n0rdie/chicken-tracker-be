@@ -25,6 +25,6 @@ class Api::V1::SheltersController < ApplicationController
     private
 
     def shelter_params
-        params.require(:shelter).permit(:id, :name)
+        params.require(:shelter).permit(:id, :name, :user_id)
     end
 end

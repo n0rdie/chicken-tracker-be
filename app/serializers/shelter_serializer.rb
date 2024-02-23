@@ -1,7 +1,7 @@
 class ShelterSerializer
     include JSONAPI::Serializer
-    
-    has_many :animals
 
-    attributes :name
+    attributes :name, :user_id
+
+    has_many :animals, serializer: AnimalSerializer
 end

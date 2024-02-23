@@ -5,6 +5,11 @@ class Api::V1::AnimalsController < ApplicationController
         render json: AnimalSerializer.new(animal)
     end
 
+    def index
+        shelter = Shelter.find(params[:shelter_id])
+        render json: AnimalSerializer.new(shelter.animals)
+    end
+
     def create
         animal = Animal.create(animal_params)
         if animal.save
