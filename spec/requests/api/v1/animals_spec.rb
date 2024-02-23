@@ -2,7 +2,7 @@ require "rails_helper"
 
 RSpec.describe "Api::V1::Shelters", type: :request do
     it "13: Animal Show" do
-        new_shelter_data = ({ "name": "Red Barn" })
+        new_shelter_data = ({ "name": "Red Barn", "user_id": "1" })
         post "/api/v1/shelters", headers: {"CONTENT_TYPE" => "application/json"}, params: JSON.generate(shelter: new_shelter_data)
         shelter = Shelter.last
 
@@ -25,12 +25,12 @@ RSpec.describe "Api::V1::Shelters", type: :request do
     end
 
     it "15: Animal Index" do
-        shelter1_data = ({ "name": "Red Barn" })
+        shelter1_data = ({ "name": "Red Barn", "user_id": "1" })
         post "/api/v1/shelters", headers: {"CONTENT_TYPE" => "application/json"}, params: JSON.generate(shelter: shelter1_data)
         expect(response).to have_http_status(:success)
         shelter1 = Shelter.last
 
-        shelter2_data = ({ "name": "Blue Coop" })
+        shelter2_data = ({ "name": "Blue Coop", "user_id": "1" })
         post "/api/v1/shelters", headers: {"CONTENT_TYPE" => "application/json"}, params: JSON.generate(shelter: shelter2_data)
         expect(response).to have_http_status(:success)
         shelter2 = Shelter.last
@@ -68,7 +68,7 @@ RSpec.describe "Api::V1::Shelters", type: :request do
     end
 
     it "9: Animal Create" do
-        new_shelter_data = ({ "name": "Red Barn" })
+        new_shelter_data = ({ "name": "Red Barn", "user_id": "1" })
         post "/api/v1/shelters", headers: {"CONTENT_TYPE" => "application/json"}, params: JSON.generate(shelter: new_shelter_data)
         shelter = Shelter.last
 
@@ -96,7 +96,7 @@ RSpec.describe "Api::V1::Shelters", type: :request do
     end
 
     it "10: Animal Update" do
-        new_shelter_data = ({ "name": "Red Barn" })
+        new_shelter_data = ({ "name": "Red Barn", "user_id": "1" })
         post "/api/v1/shelters", headers: {"CONTENT_TYPE" => "application/json"}, params: JSON.generate(shelter: new_shelter_data)
         shelter = Shelter.last
         new_animal_data = ({ shelter_id: shelter.id, name: "Huck", species: "Chicken", top_speed: nil })
@@ -125,7 +125,7 @@ RSpec.describe "Api::V1::Shelters", type: :request do
     end
 
     it "11: Animal Destroy" do
-        new_shelter_data = ({ "name": "Red Barn" })
+        new_shelter_data = ({ "name": "Red Barn", "user_id": "1" })
         post "/api/v1/shelters", headers: {"CONTENT_TYPE" => "application/json"}, params: JSON.generate(shelter: new_shelter_data)
         new_animal_data = ({ "shelter_id": Shelter.last.id, "name": "Huck", "species": "Chicken", "birthday": nil, "color": nil, "diet": nil, "top_speed": nil })
         post "/api/v1/shelters/#{Shelter.last.id}/animals", headers: {"CONTENT_TYPE" => "application/json"}, params: JSON.generate(animal: new_animal_data)
