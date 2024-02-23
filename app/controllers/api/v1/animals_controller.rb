@@ -1,8 +1,13 @@
 class Api::V1::AnimalsController < ApplicationController
     
     def show
-        animal = Animal.find(params[:id])
-        render json: AnimalSerializer.new(animal)
+        animal = AnimalFacade.animal_search(params[:q])
+        # animal = Animal.find(params[:id])
+        if animal
+          render json: AnimalSerializer.new(animal)
+        else
+          no_animal_response
+        end
     end
 
     def create
@@ -23,7 +28,7 @@ class Api::V1::AnimalsController < ApplicationController
         AnimalDestroyer.destroy(params[:id])
     end
 
-    private
+private
 
     def animal_params
         params.require(:animal).permit( :id, 
@@ -43,5 +48,12 @@ class Api::V1::AnimalsController < ApplicationController
                                         :lifestyle, 
                                         :fav_food
         )
+    end
+
+    def no_animal_response
+      render json: ErrorSerializer.new(
+      ErrorMessage.new(
+        "The requested animal could not be found.", 404
+      )).serialize_json, status: 404
     end
 end
