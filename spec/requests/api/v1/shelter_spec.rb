@@ -16,7 +16,7 @@ RSpec.describe "Api::V1::Shelters", type: :request do
 
         # When a GET Shelters is sent
         user_data = ({ "user_id": "1" })
-        get "/api/v1/shelters", headers: {"CONTENT_TYPE" => "application/json"}, params: JSON.generate(user: user_data)
+        get "/api/v1/shelters", headers: {"CONTENT_TYPE" => "application/json"}
         expect(response).to have_http_status(:success)
         # All Shelters data are returned
         json_response = JSON.parse(response.body)
