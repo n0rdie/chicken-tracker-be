@@ -1,12 +1,8 @@
 class Api::V1::SheltersController < ApplicationController
 
     def index 
-      # require "pry"; binding.pry
-
       shelters = Shelter.where(user_id: params[:user_id])
       render json: ShelterSerializer.new(shelters)
-      # require "pry"; binding.pry
-
     end
 
     def show
