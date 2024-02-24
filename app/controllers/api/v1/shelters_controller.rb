@@ -1,8 +1,9 @@
 class Api::V1::SheltersController < ApplicationController
 
+
     def index 
-      shelters = Shelter.where(user_id: params[:user_id])
-      render json: ShelterSerializer.new(shelters)
+        shelters = Shelter.where(user_id: params[:user_id])
+        render json: ShelterSerializer.new(shelters)
     end
 
     def show
