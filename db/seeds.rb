@@ -7,5 +7,3 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
-shelter_1 = Shelter.create!(name: "brown barn", user_id: 1)
-shelter_2 = Shelter.create!(name: "blue coop", user_id: 1)
