@@ -2,12 +2,7 @@ class Api::V1::AnimalsController < ApplicationController
     
     def show
         animal = AnimalFacade.animal_search(params[:q])
-        # animal = Animal.find(params[:id])
-        if animal
-          render json: AnimalSerializer.new(animal)
-        else
-          no_animal_response
-        end
+        render json: AnimalSerializer.new(animal)
     end
 
     def index
@@ -17,11 +12,8 @@ class Api::V1::AnimalsController < ApplicationController
 
     def create
         animal = Animal.create(animal_params)
-        if animal.save
-            render json: AnimalSerializer.new(animal)
-        else
-
-        end
+        animal.save!
+        render json: AnimalSerializer.new(animal)
     end
 
     def update
