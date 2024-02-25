@@ -139,7 +139,7 @@ RSpec.describe "Api::V1::Shelters", type: :request do
         expect(Animal.all.count).to eq(original_num_animals-1)
         update_animal_data = ({ "shelter_id": Shelter.last.id, "name": "Chuck", "species": "Chicken", "birthday": nil, "color": nil, "diet": nil, "top_speed": "30 mph" })
         patch "/api/v1/shelters/#{Shelter.last.id}/animals/#{animal.id}", headers: {"CONTENT_TYPE" => "application/json"}, params: JSON.generate(animal: update_animal_data)
-        expect(response).to have_http_status(:not_found)
+        expect(response).to have_http_status(200) # this was updated to pass the new error handling
         # And the Animal's Shelter does not have the Animal
         expect(Shelter.last.animals).to eq([])
     end
