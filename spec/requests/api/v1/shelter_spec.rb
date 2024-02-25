@@ -106,7 +106,7 @@ RSpec.describe "Api::V1::Shelters", type: :request do
         expect(Animal.all.count).to eq(original_num_animals-1)
     end
 
-    describe "SAD PATHS: Two types of bad requests for Shelters" do
+    describe "SAD PATHS: Three types of error handlings for Shelters" do
         it "SHOW: returns 'status: :not_found' when no record of an ID exists" do
             get "/api/v1/shelters/555", headers: {"CONTENT_TYPE" => "application/json"}
             expect(response).to have_http_status(:not_found)
@@ -127,6 +127,10 @@ RSpec.describe "Api::V1::Shelters", type: :request do
             patch "/api/v1/shelters/#{shelter.id}", headers: {"CONTENT_TYPE" => "application/json"}, params: JSON.generate(shelter: update_shelter_data)
             expect(response).to have_http_status(:unprocessable_entity)
         end
-          
+
+        it "returns 'status: :bad_request' with bad parameters" do
+            # I am not sure what to test here
+            # expect(response).to have_http_status(:bad_request)
+        end
     end
 end
