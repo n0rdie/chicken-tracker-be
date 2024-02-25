@@ -47,10 +47,11 @@ private
         )
     end
 
-    def no_animal_response
-      render json: ErrorSerializer.new(
-      ErrorMessage.new(
-        "The requested animal could not be found.", 404
-      )).serialize_json, status: 404
-    end
+    # I believe this is no longer necessary with the new ApplicationController logic
+    # def no_animal_response
+    #   render json: ErrorSerializer.new(
+    #   ErrorMessage.new(
+    #     "The requested animal could not be found.", 404
+    #   )).serialize_json, status: 404
+    # end
 end
