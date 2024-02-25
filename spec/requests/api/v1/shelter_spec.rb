@@ -105,4 +105,28 @@ RSpec.describe "Api::V1::Shelters", type: :request do
         # And all the Animals in the Shelter are also deleted
         expect(Animal.all.count).to eq(original_num_animals-1)
     end
+
+    describe "SAD PATHS: Two types of bad requests for Shelters" do
+        it "SHOW: returns 'status: :not_found' when no record of an ID exists" do
+            get "/api/v1/shelters/555", headers: {"CONTENT_TYPE" => "application/json"}
+            expect(response).to have_http_status(:not_found)
+        end
+
+        it "CREATE: returns 'status: :unprocessable_entity' with invalid parameters" do
+            invalid_shelter_data = ({ "name": "", "user_id": "1" })
+            post "/api/v1/shelters", headers: {"CONTENT_TYPE" => "application/json"}, params: JSON.generate(shelter: invalid_shelter_data)
+            expect(response).to have_http_status(:unprocessable_entity)
+        end
+
+        it "UPDATE: returns 'status: :unprocessable_entity' with invalid parameters" do
+            new_shelter_data = ({ "name": "Red Barn", "user_id": "1" })
+            post "/api/v1/shelters", headers: {"CONTENT_TYPE" => "application/json"}, params: JSON.generate(shelter: new_shelter_data)
+            shelter = Shelter.last
+
+            update_shelter_data = ({ "name": "" })
+            patch "/api/v1/shelters/#{shelter.id}", headers: {"CONTENT_TYPE" => "application/json"}, params: JSON.generate(shelter: update_shelter_data)
+            expect(response).to have_http_status(:unprocessable_entity)
+        end
+          
+    end
 end

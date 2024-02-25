@@ -143,4 +143,26 @@ RSpec.describe "Api::V1::Shelters", type: :request do
         # And the Animal's Shelter does not have the Animal
         expect(Shelter.last.animals).to eq([])
     end
+
+    describe "SAD PATHS: Three types of bad requests for Animals" do
+        it "SHOW: returns 'status: :not_found' when no record of an ID exists" do
+            new_shelter_data = ({ "name": "Red Barn", "user_id": "1" })
+            post "/api/v1/shelters/1/animals/555", headers: {"CONTENT_TYPE" => "application/json"}
+            expect(response).to have_http_status(:not_found)
+        end
+
+        it "CREATE: returns 'status: :unprocessable_entity' with invalid parameters" do
+            new_shelter_data = ({ "name": "Red Barn", "user_id": "1" })
+            invalid_animal_data = ({ shelter_id: shelter.id, name: "Huck", species: "Chicken" })
+            post "/api/v1/shelters/#{shelter.id}/animals/#{animal.id}", headers: {"CONTENT_TYPE" => "application/json"}, params: JSON.generate(shelter: invalid_shelter_data)
+            expect(response).to have_http_status(:unprocessable_entity)
+        end
+
+        it "CREATE: returns 'status: :bad_request' with bad parameters" do
+            invalid_shelter_data = ({ "name": 555, "user_id": "1" })
+            post "/api/v1/shelters", headers: {"CONTENT_TYPE" => "application/json"}, params: JSON.generate(shelter: invalid_shelter_data)
+            expect(response).to have_http_status(:bad_request)
+        end
+          
+    end
 end
