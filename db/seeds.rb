@@ -96,3 +96,6 @@ chicken_5 = Animal.create!(
   fav_food: "Seeds"
   shelter_id: "1"
   )
+
+  shelter_1 = Shelter.create!(name: "red barn", user_id: "1", id: "1")
+

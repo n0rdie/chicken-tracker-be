@@ -1,13 +1,7 @@
 class Api::V1::AnimalsController < ApplicationController
     
     def show
-        animal = AnimalFacade.animal_search(params[:q])
-        # animal = Animal.find(params[:id])
-        if animal
-          render json: AnimalSerializer.new(animal)
-        else
-          no_animal_response
-        end
+        render json: AnimalSerializer.new(Animal.find_by(id: params[:id])) 
     end
 
     def index
@@ -16,12 +10,10 @@ class Api::V1::AnimalsController < ApplicationController
     end
 
     def create
-        animal = Animal.create(animal_params)
-        if animal.save
-            render json: AnimalSerializer.new(animal)
-        else
-
-        end
+        animal = AnimalFacade.animal_search(params[:q]) # External Ninja
+        animal = Animal.create(animal) # Creation BE
+        animal.save! # Save to BE table
+        render json: AnimalSerializer.new(animal) # pass to frontend Json
     end
 
     def update
@@ -53,12 +45,5 @@ private
                                         :lifestyle, 
                                         :fav_food
         )
-    end
-
-    def no_animal_response
-      render json: ErrorSerializer.new(
-      ErrorMessage.new(
-        "The requested animal could not be found.", 404
-      )).serialize_json, status: 404
     end
 end
