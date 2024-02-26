@@ -1,0 +1,107 @@
+[
+    {
+        "name": "Chicken",
+        "taxonomy": {
+            "kingdom": "Animalia",
+            "phylum": "Chordata",
+            "class": "Aves",
+            "order": "Galliformes",
+            "family": "Phasianidae",
+            "genus": "Gallus",
+            "scientific_name": "Gallus gallus"
+        },
+        "locations": [
+            "Africa",
+            "Asia",
+            "Central-America",
+            "Eurasia",
+            "Europe",
+            "North-America",
+            "Oceania",
+            "South-America"
+        ],
+        "characteristics": {
+            "main_prey": "Seeds, Fruit, Insects, Berries",
+            "distinctive_feature": "Sharp, pointed beak and clucking sounds",
+            "wingspan": "45cm - 60cm (17.7in - 23.6in)",
+            "habitat": "Open woodland and sheltered grassland",
+            "predators": "Human, Fox, Raccoon",
+            "diet": "Omnivore",
+            "lifestyle": "Flock",
+            "favorite_food": "Seeds",
+            "type": "Bird",
+            "average_clutch_size": "2",
+            "slogan": "First domesticated more than 10,000 years ago!",
+            "color": "BrownYellowRedBlackWhiteOrange",
+            "skin_type": "Feathers",
+            "top_speed": "6 mph",
+            "lifespan": "2 - 4 years",
+            "weight": "1kg - 3kg (2.2lbs - 6.6lbs)",
+            "length": "30cm - 45cm (11.8in - 17.7in)"
+        }
+    },
+    {
+        "name": "Chicken Snake",
+        "taxonomy": {
+            "kingdom": "Animalia",
+            "phylum": "Chordata",
+            "class": "Reptilia",
+            "order": "Squamata",
+            "family": "Colubridae",
+            "genus": "Spilotes",
+            "scientific_name": "Spilotes pullatus"
+        },
+        "locations": [
+            "Central-America",
+            "South-America"
+        ],
+        "characteristics": {
+            "diet": "Carnivore",
+            "average_litter_size": "12 to 18",
+            "common_name": "Chicken snake, caninana, tiger rat snake, serpiente tigre, clibo",
+            "color": "YellowBlackMulti-colored",
+            "lifespan": "10 to 18 years",
+            "length": "4 to 7 feet",
+            "venomous": "No",
+            "aggression": "Medium"
+        }
+    },
+    {
+        "name": "Silkie Chicken",
+        "taxonomy": {
+            "kingdom": "Animalia",
+            "phylum": "Chordata",
+            "class": "Aves",
+            "order": "Galliformes",
+            "family": "Phasianidae",
+            "genus": "Gallus",
+            "scientific_name": "Gallus gallus"
+        },
+        "locations": [
+            "Asia"
+        ],
+        "characteristics": {
+            "name_of_young": "chick",
+            "group_behavior": "Flock",
+            "biggest_threat": "racoons",
+            "most_distinctive_feature": "Fluffy feathers",
+            "other_name(s)": "Silky or Chinese Silk Chicken",
+            "gestation_period": "Incubation period- 20 to 21 days",
+            "litter_size": "10-14 eggs",
+            "habitat": "farm, yards",
+            "predators": "Racoons, Bobcats, Foxes, Coyotes, Weasels, Birds of Prey, Skunks, Snakes, and Rodents",
+            "diet": "Omnivore",
+            "type": "bird",
+            "common_name": "Silkie",
+            "origin": "China",
+            "group": "flock",
+            "color": "GreyBlueBlackWhite",
+            "skin_type": "Feathers",
+            "lifespan": "7-9 years",
+            "weight": "1.5-3 pounds",
+            "height": "8-14 inches",
+            "age_of_sexual_maturity": "Hens- 8 to 10 months, Cockerels- 10 to 12 months",
+            "age_of_weaning": "Wean from heat lamps at 6 weeks"
+        }
+    }
+]
