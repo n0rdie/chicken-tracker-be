@@ -1,7 +1,11 @@
 class Api::V1::SheltersController < ApplicationController
 
     def index
-        render json: ShelterSerializer.new(Shelter.all)
+        if params[:user_id]
+            render json: ShelterSerializer.new(Shelter.where("user_id = #{params[:user_id]}"))
+        else
+            render json: ShelterSerializer.new(Shelter.all)
+        end
     end
 
     def show
@@ -11,11 +15,8 @@ class Api::V1::SheltersController < ApplicationController
 
     def create
         shelter = Shelter.create(shelter_params)
-        if shelter.save
-            render json: ShelterSerializer.new(shelter)
-        else
-
-        end
+        shelter.save!
+        render json: ShelterSerializer.new(shelter)
     end
 
     def update

@@ -2,17 +2,14 @@ require "rails_helper"
 
 RSpec.describe "Api::V1::Shelters", type: :request do
     it "15: Shelter Index" do
+        shelter3_data = ({ "name": "Green Sea", "user_id": "2" })
+        post "/api/v1/shelters", headers: {"CONTENT_TYPE" => "application/json"}, params: JSON.generate(shelter: shelter3_data)
+
         shelter1_data = ({ "name": "Red Barn", "user_id": "1" })
         post "/api/v1/shelters", headers: {"CONTENT_TYPE" => "application/json"}, params: JSON.generate(shelter: shelter1_data)
-        shelter1 = Shelter.last
 
         shelter2_data = ({ "name": "Blue Coop", "user_id": "1" })
         post "/api/v1/shelters", headers: {"CONTENT_TYPE" => "application/json"}, params: JSON.generate(shelter: shelter2_data)
-        shelter2 = Shelter.last
-
-        shelter3_data = ({ "name": "Green Sea", "user_id": "2" })
-        post "/api/v1/shelters", headers: {"CONTENT_TYPE" => "application/json"}, params: JSON.generate(shelter: shelter3_data)
-        shelter3 = Shelter.last
 
         # When a GET Shelters is sent
         user_data = ({ "user_id": "1" })
@@ -20,13 +17,23 @@ RSpec.describe "Api::V1::Shelters", type: :request do
         expect(response).to have_http_status(:success)
         # All Shelters data are returned
         json_response = JSON.parse(response.body)
-        expect(json_response['data'][0]['attributes']['name']).to eq('Red Barn')
-        expect(json_response['data'][0]['attributes']['user_id']).to eq(1)
-        expect(json_response['data'][1]['attributes']['name']).to eq('Blue Coop')
+        expect(json_response['data'][0]['attributes']['name']).to eq('Green Sea')
+        expect(json_response['data'][0]['attributes']['user_id']).to eq(2)
+        expect(json_response['data'][1]['attributes']['name']).to eq('Red Barn')
         expect(json_response['data'][1]['attributes']['user_id']).to eq(1)
-        expect(json_response['data'][2]['attributes']['name']).to eq('Green Sea')
-        expect(json_response['data'][2]['attributes']['user_id']).to eq(2)
+        expect(json_response['data'][2]['attributes']['name']).to eq('Blue Coop')
+        expect(json_response['data'][2]['attributes']['user_id']).to eq(1)
         expect(json_response['data'].count).to eq(3)
+
+        # When a GET Shelters is sent with a valid User_id
+        get "/api/v1/shelters?user_id=1", headers: {"CONTENT_TYPE" => "application/json"}
+        expect(response).to have_http_status(:success)
+        # All Shelters of that User_id are returned
+        json_response = JSON.parse(response.body)
+        expect(json_response['data'][0]['attributes']['name']).to eq('Red Barn')
+        expect(json_response['data'][1]['attributes']['name']).to eq('Blue Coop')
+        # And Shelters not of that User_id are not returned
+        expect(json_response['data'].count).to eq(2)
     end
 
     it "14: Shelter Show" do
@@ -104,5 +111,33 @@ RSpec.describe "Api::V1::Shelters", type: :request do
         expect(response).to have_http_status(:not_found)
         # And all the Animals in the Shelter are also deleted
         expect(Animal.all.count).to eq(original_num_animals-1)
+    end
+
+    describe "SAD PATHS: Three types of error handlings for Shelters" do
+        it "SHOW: returns 'status: :not_found' when no record of an ID exists" do
+            get "/api/v1/shelters/555", headers: {"CONTENT_TYPE" => "application/json"}
+            expect(response).to have_http_status(:not_found)
+        end
+
+        it "CREATE: returns 'status: :unprocessable_entity' with invalid parameters" do
+            invalid_shelter_data = ({ "name": "", "user_id": "1" })
+            post "/api/v1/shelters", headers: {"CONTENT_TYPE" => "application/json"}, params: JSON.generate(shelter: invalid_shelter_data)
+            expect(response).to have_http_status(:unprocessable_entity)
+        end
+
+        it "UPDATE: returns 'status: :unprocessable_entity' with invalid parameters" do
+            new_shelter_data = ({ "name": "Red Barn", "user_id": "1" })
+            post "/api/v1/shelters", headers: {"CONTENT_TYPE" => "application/json"}, params: JSON.generate(shelter: new_shelter_data)
+            shelter = Shelter.last
+
+            update_shelter_data = ({ "name": "" })
+            patch "/api/v1/shelters/#{shelter.id}", headers: {"CONTENT_TYPE" => "application/json"}, params: JSON.generate(shelter: update_shelter_data)
+            expect(response).to have_http_status(:unprocessable_entity)
+        end
+
+        it "returns 'status: :bad_request' with bad parameters" do
+            # I am not sure what to test here
+            # expect(response).to have_http_status(:bad_request)
+        end
     end
 end
