@@ -1,8 +1,7 @@
 class Api::V1::AnimalsController < ApplicationController
     
     def show
-        animal = AnimalFacade.animal_search(params[:q])
-        render json: AnimalSerializer.new(animal)
+        render json: AnimalSerializer.new(Animal.find_by(id: params[:id])) 
     end
 
     def index
@@ -11,9 +10,10 @@ class Api::V1::AnimalsController < ApplicationController
     end
 
     def create
-        animal = Animal.create(animal_params)
-        animal.save!
-        render json: AnimalSerializer.new(animal)
+        animal = AnimalFacade.animal_search(params[:q]) # External Ninja
+        animal = Animal.create(animal) # Creation BE
+        animal.save! # Save to BE table
+        render json: AnimalSerializer.new(animal) # pass to frontend Json
     end
 
     def update
@@ -46,12 +46,4 @@ private
                                         :fav_food
         )
     end
-
-    # I believe this is no longer necessary with the new ApplicationController logic
-    # def no_animal_response
-    #   render json: ErrorSerializer.new(
-    #   ErrorMessage.new(
-    #     "The requested animal could not be found.", 404
-    #   )).serialize_json, status: 404
-    # end
 end

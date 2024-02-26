@@ -17,10 +17,10 @@ class AnimalPoro
               :fav_food
 
   def initialize(data)
-    @name = data[:name]
-    @species = data[:characteristics][:type]
+    @name = ''
+    @species = '' 
     @birthday = ''
-    @color = data[:characteristics][:color]
+    @color = ''
     @main_prey = data[:characteristics][:main_prey]
     @habitat = data[:characteristics][:habitat]
     @diet = data[:characteristics][:diet]
