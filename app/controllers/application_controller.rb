@@ -15,10 +15,4 @@ private
     render json: ErrorSerializer.new(ErrorMessage.new(exception.message, 422))
       .serialize_json, status: :unprocessable_entity
   end
-
-  # when a request can't be processed due to bad parameters
-  def bad_request_response(exception)
-    render json: ErrorSerializer.new(ErrorMessage.new(exception.message, 400))
-      .serialize_json, status: :bad_request
-  end
 end

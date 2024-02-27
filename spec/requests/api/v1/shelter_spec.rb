@@ -142,10 +142,5 @@ RSpec.describe "Api::V1::Shelters", type: :request do
             patch "/api/v1/shelters/#{shelter.id}", headers: {"CONTENT_TYPE" => "application/json"}, params: JSON.generate(shelter: update_shelter_data)
             expect(response).to have_http_status(:unprocessable_entity)
         end
-
-        it "returns 'status: :bad_request' with bad parameters" do
-            # I am not sure what to test here
-            # expect(response).to have_http_status(:bad_request)
-        end
     end
 end

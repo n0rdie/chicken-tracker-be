@@ -227,7 +227,7 @@ RSpec.describe "Api::V1::Shelters", type: :request do
             json_response = File.read("spec/fixtures/chicken_fixture.json")
             stub_request(:get, "https://api.api-ninjas.com/v1/animals?name=Chicken").
             to_return(status: 200, body: json_response, headers: {})
-            
+
             new_shelter_data = ({ "name": "Red Barn", "user_id": "1" })
             post "/api/v1/shelters", headers: {"CONTENT_TYPE" => "application/json"}, params: JSON.generate(shelter: new_shelter_data)
             shelter = Shelter.last
@@ -237,12 +237,6 @@ RSpec.describe "Api::V1::Shelters", type: :request do
             update_animal_data = ({ shelter_id: shelter.id, name: "" })
             patch "/api/v1/shelters/#{shelter.id}/animals/#{animal.id}", headers: {"CONTENT_TYPE" => "application/json"}, params: JSON.generate(animal: update_animal_data)
             expect(response).to have_http_status(:unprocessable_entity)
-        end
-
-        it "returns 'status: :bad_request' with bad parameters" do
-            # I am not sure what to test here
-            # expect(response).to have_http_status(:bad_request)
-        end
-          
+        end          
     end
 end
