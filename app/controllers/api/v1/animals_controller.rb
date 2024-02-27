@@ -28,7 +28,11 @@ class Api::V1::AnimalsController < ApplicationController
 
     def update
         result = AnimalUpdater.update(params[:id], animal_params)
-        render result
+        # require 'pry'; binding.pry
+         # pass to frontend Json
+        render json: AnimalSerializer.new(Animal.find_by(id: params[:id])) 
+
+        # render result
     end
 
     def destroy
