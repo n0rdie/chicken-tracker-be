@@ -2,6 +2,10 @@ require 'rails_helper'
 
 RSpec.describe 'Animal Service' do
   it 'searches our API for an animal' do
+    json_response = File.read("spec/fixtures/chicken_fixture.json")
+    stub_request(:get, "https://api.api-ninjas.com/v1/animals?name=Chicken").
+    to_return(status: 200, body: json_response, headers: {})
+    
     search_term = 'Chicken' 
     animals = AnimalService.new.animal(search_term)
 

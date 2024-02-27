@@ -1,12 +1,56 @@
 require "rails_helper"
 
 RSpec.describe "Api::V1::Shelters", type: :request do
+
+    it "figures out how to make the request based on the stub with Webmock" do
+        json_response = File.read("spec/fixtures/chicken_fixture.json")
+        stub_request(:get, "https://api.api-ninjas.com/v1/animals?name=Chicken").
+        to_return(status: 200, body: json_response, headers: {})
+
+        shelter = Shelter.create!(name: "Red Barn", user_id: "1")
+        new_animal_data = ({ "shelter_id": shelter.id, "name": "Huck", "species": "Chicken", "birthday": "3/3/2020", "color": "orange" })
+        
+        post "/api/v1/shelters/#{shelter.id}/animals", headers: {"CONTENT_TYPE" => "application/json"}, params: JSON.generate(animal: new_animal_data)
+
+        animal = Animal.last
+
+        get "/api/v1/shelters/#{shelter.id}/animals/#{animal.id}"
+        
+        parsed_response = JSON.parse(response.body, symbolize_names: :true)
+        data = parsed_response[:data]
+ 
+        expect(response).to have_http_status(:success)
+        # User data
+        expect(data[:id]).to eq(animal.id.to_s)
+        expect(data[:type]).to eq("animal")
+        expect(data[:attributes][:shelter_id]).to eq(shelter.id)
+        expect(data[:attributes][:name]).to eq("Huck")
+        expect(data[:attributes][:species]).to eq("Chicken")
+        expect(data[:attributes][:birthday]).to eq("3/3/2020")
+        expect(data[:attributes][:color]).to eq("orange")
+        # API data
+        expect(data[:attributes][:main_prey]).to eq("Seeds, Fruit, Insects, Berries")
+        expect(data[:attributes][:habitat]).to eq("Open woodland and sheltered grassland")
+        expect(data[:attributes][:diet]).to eq("Omnivore")
+        expect(data[:attributes][:skin_type]).to eq("Feathers")
+        expect(data[:attributes][:top_speed]).to eq("6 mph")
+        expect(data[:attributes][:avg_litter]).to eq("2")
+        expect(data[:attributes][:lifespan]).to eq("2 - 4 years")
+        expect(data[:attributes][:weight]).to eq("1kg - 3kg (2.2lbs - 6.6lbs)")
+        expect(data[:attributes][:lifestyle]).to eq("Flock")
+        expect(data[:attributes][:fav_food]).to eq("Seeds")
+    end
+
     it "13: Animal Show" do
+        json_response = File.read("spec/fixtures/chicken_fixture.json")
+        stub_request(:get, "https://api.api-ninjas.com/v1/animals?name=Chicken").
+        to_return(status: 200, body: json_response, headers: {})
+
         new_shelter_data = ({ "name": "Red Barn", "user_id": "1" })
         post "/api/v1/shelters", headers: {"CONTENT_TYPE" => "application/json"}, params: JSON.generate(shelter: new_shelter_data)
         shelter = Shelter.last
 
-        new_animal_data = ({ "shelter_id": shelter.id, "name": "Huck", "species": "Chicken" })
+        new_animal_data = ({ "shelter_id": shelter.id, "name": "Huck", "species": "Chicken", "birthday": "3/3/2020", "color": "orange" })
         post "/api/v1/shelters/#{shelter.id}/animals", headers: {"CONTENT_TYPE" => "application/json"}, params: JSON.generate(animal: new_animal_data)
         animal = Animal.last
 
@@ -21,10 +65,14 @@ RSpec.describe "Api::V1::Shelters", type: :request do
         expect(json_response['data']['attributes']['name']).to eq('Huck')
         expect(json_response['data']['attributes']['species']).to eq('Chicken')
         expect(json_response['data']['attributes']['top_speed']).to eq('6 mph')
-        expect(json_response['data']['attributes']['color']).to eq(nil)
+        expect(json_response['data']['attributes']['color']).to eq('orange')
     end
 
     it "15: Animal Index" do
+        json_response = File.read("spec/fixtures/chicken_fixture.json")
+        stub_request(:get, "https://api.api-ninjas.com/v1/animals?name=Chicken").
+        to_return(status: 200, body: json_response, headers: {})
+
         shelter1_data = ({ "name": "Red Barn", "user_id": "1" })
         post "/api/v1/shelters", headers: {"CONTENT_TYPE" => "application/json"}, params: JSON.generate(shelter: shelter1_data)
         expect(response).to have_http_status(:success)
@@ -68,6 +116,10 @@ RSpec.describe "Api::V1::Shelters", type: :request do
     end
 
     it "9: Animal Create" do
+        json_response = File.read("spec/fixtures/chicken_fixture.json")
+        stub_request(:get, "https://api.api-ninjas.com/v1/animals?name=Chicken").
+        to_return(status: 200, body: json_response, headers: {})
+
         new_shelter_data = ({ "name": "Red Barn", "user_id": "1" })
         post "/api/v1/shelters", headers: {"CONTENT_TYPE" => "application/json"}, params: JSON.generate(shelter: new_shelter_data)
         shelter = Shelter.last
@@ -97,6 +149,10 @@ RSpec.describe "Api::V1::Shelters", type: :request do
     end
 
     it "10: Animal Update" do
+        json_response = File.read("spec/fixtures/chicken_fixture.json")
+        stub_request(:get, "https://api.api-ninjas.com/v1/animals?name=Chicken").
+        to_return(status: 200, body: json_response, headers: {})
+
         new_shelter_data = ({ "name": "Red Barn", "user_id": "1" })
         post "/api/v1/shelters", headers: {"CONTENT_TYPE" => "application/json"}, params: JSON.generate(shelter: new_shelter_data)
         shelter = Shelter.last
@@ -126,6 +182,10 @@ RSpec.describe "Api::V1::Shelters", type: :request do
     end
 
     it "11: Animal Destroy" do
+        json_response = File.read("spec/fixtures/chicken_fixture.json")
+        stub_request(:get, "https://api.api-ninjas.com/v1/animals?name=Chicken").
+        to_return(status: 200, body: json_response, headers: {})
+
         new_shelter_data = ({ "name": "Red Barn", "user_id": "1" })
         post "/api/v1/shelters", headers: {"CONTENT_TYPE" => "application/json"}, params: JSON.generate(shelter: new_shelter_data)
         new_animal_data = ({ "shelter_id": Shelter.last.id, "name": "Huck", "species": "Chicken", "birthday": nil, "color": nil, "diet": nil, "top_speed": nil })
@@ -152,6 +212,10 @@ RSpec.describe "Api::V1::Shelters", type: :request do
         end
 
         it "CREATE: returns 'status: :unprocessable_entity' with invalid parameters" do
+            json_response = File.read("spec/fixtures/chicken_fixture.json")
+            stub_request(:get, "https://api.api-ninjas.com/v1/animals?name=Chicken").
+            to_return(status: 200, body: json_response, headers: {})
+
             new_shelter_data = ({ "name": "Red Barn", "user_id": "1" })
             post "/api/v1/shelters", headers: {"CONTENT_TYPE" => "application/json"}, params: JSON.generate(shelter: new_shelter_data)
             invalid_animal_data = ({ "shelter_id": Shelter.last.id, "name": "", "species": "Chicken", "birthday": nil, "color": nil, "diet": nil, "top_speed": nil })
@@ -160,6 +224,10 @@ RSpec.describe "Api::V1::Shelters", type: :request do
         end
 
         it "UPDATE: returns 'status: :unprocessable_entity' with invalid parameters" do
+            json_response = File.read("spec/fixtures/chicken_fixture.json")
+            stub_request(:get, "https://api.api-ninjas.com/v1/animals?name=Chicken").
+            to_return(status: 200, body: json_response, headers: {})
+
             new_shelter_data = ({ "name": "Red Barn", "user_id": "1" })
             post "/api/v1/shelters", headers: {"CONTENT_TYPE" => "application/json"}, params: JSON.generate(shelter: new_shelter_data)
             shelter = Shelter.last
@@ -169,12 +237,6 @@ RSpec.describe "Api::V1::Shelters", type: :request do
             update_animal_data = ({ shelter_id: shelter.id, name: "" })
             patch "/api/v1/shelters/#{shelter.id}/animals/#{animal.id}", headers: {"CONTENT_TYPE" => "application/json"}, params: JSON.generate(animal: update_animal_data)
             expect(response).to have_http_status(:unprocessable_entity)
-        end
-
-        it "returns 'status: :bad_request' with bad parameters" do
-            # I am not sure what to test here
-            # expect(response).to have_http_status(:bad_request)
-        end
-          
+        end          
     end
 end
