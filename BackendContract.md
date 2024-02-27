@@ -1,4 +1,7 @@
 # How to make Chicken Tracker Service
+### Schema
+![Schema Photo](images/schema.png)
+
 ### Required gems
 ```ruby
 gem 'faraday'
