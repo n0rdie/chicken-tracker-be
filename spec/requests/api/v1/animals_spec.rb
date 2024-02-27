@@ -212,6 +212,10 @@ RSpec.describe "Api::V1::Shelters", type: :request do
         end
 
         it "CREATE: returns 'status: :unprocessable_entity' with invalid parameters" do
+            json_response = File.read("spec/fixtures/chicken_fixture.json")
+            stub_request(:get, "https://api.api-ninjas.com/v1/animals?name=Chicken").
+            to_return(status: 200, body: json_response, headers: {})
+
             new_shelter_data = ({ "name": "Red Barn", "user_id": "1" })
             post "/api/v1/shelters", headers: {"CONTENT_TYPE" => "application/json"}, params: JSON.generate(shelter: new_shelter_data)
             invalid_animal_data = ({ "shelter_id": Shelter.last.id, "name": "", "species": "Chicken", "birthday": nil, "color": nil, "diet": nil, "top_speed": nil })
@@ -220,6 +224,10 @@ RSpec.describe "Api::V1::Shelters", type: :request do
         end
 
         it "UPDATE: returns 'status: :unprocessable_entity' with invalid parameters" do
+            json_response = File.read("spec/fixtures/chicken_fixture.json")
+            stub_request(:get, "https://api.api-ninjas.com/v1/animals?name=Chicken").
+            to_return(status: 200, body: json_response, headers: {})
+            
             new_shelter_data = ({ "name": "Red Barn", "user_id": "1" })
             post "/api/v1/shelters", headers: {"CONTENT_TYPE" => "application/json"}, params: JSON.generate(shelter: new_shelter_data)
             shelter = Shelter.last
