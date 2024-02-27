@@ -14,4 +14,10 @@ Rails.application.routes.draw do
       end
     end
   end
+
+  resources :shelters, only: [:show, :index] do
+    resources :animals, only: [:show, :index]
+  end
+
+  root "welcome#index"
 end

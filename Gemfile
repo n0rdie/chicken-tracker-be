@@ -38,6 +38,8 @@ gem "bootsnap", require: false
 gem "jsonapi-serializer"
 gem 'pry'
 gem 'faraday'
+gem 'capybara'
+gem 'launchy'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
