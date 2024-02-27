@@ -2,12 +2,12 @@
 
 # Shelters
 ### Show one Shelter
+'''
 response = conn.get("/api/v1/shelters/<SHELTER_ID>") do |req|
-
   req.headers['Content-Type'] = 'application/json'
-  
 end
 JSON.parse(response.body, symbolize_names: true)
+'''
 ### Index User's Shelters
 response = conn.get("/api/v1/shelters?user_id=<USER_ID>") do |req|
   req.headers['Content-Type'] = 'application/json'
