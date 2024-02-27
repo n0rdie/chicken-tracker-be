@@ -4,23 +4,26 @@ RSpec.describe "Api::V1::Shelters", type: :request do
 
     it "figures out how to make the request based on the stub with Webmock" do
         shelter = Shelter.create!(name: "Red Barn", user_id: "1")
-        animal = Animal.create!(shelter_id: shelter.id, name: "Huck", species: "Chicken", birthday: "3/3/2020", color: "orange")
+        new_animal_data = ({ "shelter_id": shelter.id, "name": "Huck", "species": "Chicken", "birthday": "3/3/2020", "color": "orange" })
         
-        # json_response = File.read("spec/fixtures/chicken_fixture.json")
-        # stub_request(:get, "https://api.api-ninjas.com/v1/animals?name=chicken").
-        #   to_return(status: 200, body: json_response)
-        WebMock.allow_net_connect!
+        json_response = File.read("spec/fixtures/chicken_fixture.json")
+        stub_request(:get, "https://api.api-ninjas.com/v1/animals?name=Chicken").
+        to_return(status: 200, body: json_response, headers: {})
+        
+        post "/api/v1/shelters/#{shelter.id}/animals", headers: {"CONTENT_TYPE" => "application/json"}, params: JSON.generate(animal: new_animal_data)
+
+        animal = Animal.last
+
         get "/api/v1/shelters/#{shelter.id}/animals/#{animal.id}"
         
-        # parsed_response = JSON.parse(response.body, symbolize_names: :true)
-        # data = parsed_response[:data]
-        require "pry"; binding.pry
+        parsed_response = JSON.parse(response.body, symbolize_names: :true)
+        data = parsed_response[:data]
+ 
         expect(response).to have_http_status(:success)
         # User data
         expect(data[:id]).to eq(animal.id.to_s)
-        # expect(data[:shelter_id]).to eq(shelter.id.to_s)
-        expect(data[:type]).to eq("animal") # <-- where did this show up?
-         # ["characteristics"] in the api, and the poro, not attributes
+        expect(data[:type]).to eq("animal")
+        expect(data[:attributes][:shelter_id]).to eq(shelter.id)
         expect(data[:attributes][:name]).to eq("Huck")
         expect(data[:attributes][:species]).to eq("Chicken")
         expect(data[:attributes][:birthday]).to eq("3/3/2020")
