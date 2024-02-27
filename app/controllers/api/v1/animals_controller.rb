@@ -10,8 +10,18 @@ class Api::V1::AnimalsController < ApplicationController
     end
 
     def create
-        animal = AnimalFacade.animal_search(params[:q]) # External Ninja
-        animal = Animal.create(animal) # Creation BE
+        animal = AnimalFacade.animal_search(params[:animal][:species]) # External Ninja
+        animal = Animal.create(animal_params.merge(
+          diet: animal.diet, 
+          main_prey: animal.main_prey,
+          skin_type: animal.skin_type,
+          top_speed: animal.top_speed,
+          avg_litter: animal.avg_litter,
+          lifespan: animal.lifespan,
+          fav_food: animal.fav_food,
+          habitat: animal.habitat,
+          weight: animal.weight,
+          lifestyle: animal.lifestyle)) # Creation BE
         animal.save! # Save to BE table
         render json: AnimalSerializer.new(animal) # pass to frontend Json
     end

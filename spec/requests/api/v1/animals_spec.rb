@@ -6,7 +6,7 @@ RSpec.describe "Api::V1::Shelters", type: :request do
         post "/api/v1/shelters", headers: {"CONTENT_TYPE" => "application/json"}, params: JSON.generate(shelter: new_shelter_data)
         shelter = Shelter.last
 
-        new_animal_data = ({ "shelter_id": shelter.id, "name": "Huck", "species": "Chicken", "top_speed": "30 mph" })
+        new_animal_data = ({ "shelter_id": shelter.id, "name": "Huck", "species": "Chicken" })
         post "/api/v1/shelters/#{shelter.id}/animals", headers: {"CONTENT_TYPE" => "application/json"}, params: JSON.generate(animal: new_animal_data)
         animal = Animal.last
 
@@ -20,7 +20,7 @@ RSpec.describe "Api::V1::Shelters", type: :request do
         expect(json_response['data']['type']).to eq('animal')
         expect(json_response['data']['attributes']['name']).to eq('Huck')
         expect(json_response['data']['attributes']['species']).to eq('Chicken')
-        expect(json_response['data']['attributes']['top_speed']).to eq('30 mph')
+        expect(json_response['data']['attributes']['top_speed']).to eq('6 mph')
         expect(json_response['data']['attributes']['color']).to eq(nil)
     end
 
@@ -78,7 +78,9 @@ RSpec.describe "Api::V1::Shelters", type: :request do
         new_animal_data = ({
             "shelter_id": shelter.id,
             "name": "Huck",
-            "species": "Chicken"
+            "species": "Chicken",
+            "color": "black and brown",
+            "birthday": "02/02/24"
         })
         post "/api/v1/shelters/#{shelter.id}/animals", headers: {"CONTENT_TYPE" => "application/json"}, params: JSON.generate(animal: new_animal_data)
         
@@ -89,8 +91,7 @@ RSpec.describe "Api::V1::Shelters", type: :request do
         # And the new Animal has all the info sent with post
         expect(Animal.last.name).to eq("Huck")
         expect(Animal.last.species).to eq("Chicken")
-        expect(Animal.last.top_speed).to eq(nil)
-
+        expect(Animal.last.top_speed).to eq("6 mph")
         # And you can get the Animal from its Shelter
         expect(shelter.animals).to eq([Animal.last])
     end

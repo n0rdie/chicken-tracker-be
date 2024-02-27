@@ -18,7 +18,7 @@ class AnimalPoro
 
   def initialize(data)
     @name = ''
-    @species = '' 
+    @species = data[:name]
     @birthday = ''
     @color = ''
     @main_prey = data[:characteristics][:main_prey]
