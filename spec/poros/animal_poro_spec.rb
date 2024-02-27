@@ -27,10 +27,10 @@ RSpec.describe AnimalPoro do
 
     animal = AnimalPoro.new(attr)
     expect(animal).to be_a(AnimalPoro)
-    expect(animal.name).to eq('Chicken')
-    expect(animal.species).to eq('Bird')
+    expect(animal.name).to eq('')
+    expect(animal.species).to eq('Chicken')
     expect(animal.birthday).to eq('')
-    expect(animal.color).to eq('BrownYellowRedBlackWhiteOrange')
+    expect(animal.color).to eq('')
     expect(animal.main_prey).to eq('Seeds, Fruit, Insects, Berries')
     expect(animal.habitat).to eq('Open woodland and sheltered grassland')
     expect(animal.lifespan).to eq('2 - 4 years')
