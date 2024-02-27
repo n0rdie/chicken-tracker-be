@@ -1,0 +1,4 @@
+<h1>Shelter Index</h1>
+<% @shelters.each do |shelter| %>
+    <h5>Shelter: <%= link_to shelter.name, "/shelters/#{@shelter.id}" %></h5>
+<% end %>

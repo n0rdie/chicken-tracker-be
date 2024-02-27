@@ -27,8 +27,8 @@ class Api::V1::AnimalsController < ApplicationController
     end
 
     def update
-        result = AnimalUpdater.update(params[:id], animal_params)
-        render result
+        AnimalUpdater.update(params[:id], animal_params)
+        render json: AnimalSerializer.new(Animal.find_by(id: params[:id])) 
     end
 
     def destroy

@@ -1,6 +1,7 @@
 <h1>Shelter Show</h1>
 <%=button_to "Back to Shelter Index", "/shelters", method: :get%>
 <h3>Shelter: <%= @shelter.name %></h3>
+<h3>user_id: <%= @shelter.user_id %></h3>
 <% @shelter.animals.each do |animal| %>
     <h5>Animal: <%= link_to animal.name, "/shelters/#{@shelter.id}/animals/#{animal.id}" %></h5>
 <% end %>
