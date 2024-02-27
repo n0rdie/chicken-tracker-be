@@ -1,7 +1,7 @@
 # https://hidden-sands-71693-380133048218.herokuapp.com
 
 # Shelters
-## Show
+### Show
 .get("/api/v1/shelters/:shelter_id")
 ## Index
 .get("/api/v1/shelters")
