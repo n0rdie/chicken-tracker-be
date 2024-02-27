@@ -78,10 +78,12 @@ JSON.parse(response.body, symbolize_names: true)
 ```ruby
 response = conn.patch("/api/v1/shelters/<SHELTER_ID>/animals/<ANIMALS_ID>") do |req|
   req.headers['Content-Type'] = 'application/json'
-  req.body = {"animal": {"name": "<SHELTER_NAME>", "user_id": "<USER_ID>"}}
+  req.body = {"animal": {"name": "<ANIMAL_NAME>", "species": "<ANIMAL_SPECIES>", "birthday": "<ANIMAL_BIRTHDAY>", "color": "<ANIMAL_COLOR>", "main_prey": "<ANIMAL_MAIN_PREY>", "habitat": "<ANIMAL_HABITAT>", "diet": "<ANIMAL_DIET>", "skin_type": "<ANIMAL_SKIN_TYPE>", "top_speed": "<ANIMAL_TOP_SPEED>", "avg_litter": "<ANIMAL_AVG_LITTER>", "lifespan": "<ANIMAL_LIFESPAN>", "weight": "<ANIMAL_WEIGHT>", "lifestyle": "<ANIMAL_LIFESTYLE>", "fav_food": "<ANIMAL_FAV_FOOD>", "shelter_id": "<ANIMAL_SHELTER_ID>"}}
 end
 JSON.parse(response.body, symbolize_names: true)
 ```
+NOTE: not all attributes required to Update
+
 ### Delete
 ```ruby
 response = conn.delete("/api/v1/shelters/<SHELTER_ID>/animals/<ANIMALS_ID>") do |req|
