@@ -82,7 +82,7 @@ Returns
     ]
 }
 ```
-### Create
+### Create Shelter
 ```ruby
 response = conn.post("/api/v1/shelters") do |req|
   req.headers['Content-Type'] = 'application/json'
@@ -108,7 +108,7 @@ Returns
     }
 }
 ```
-### Update
+### Update Shelter
 ```ruby
 response = conn.patch("/api/v1/shelters/<SHELTER_ID>") do |req|
   req.headers['Content-Type'] = 'application/json'
@@ -117,7 +117,7 @@ end
 JSON.parse(response.body, symbolize_names: true)
 ```
 Returns nothing
-### Delete
+### Delete Shelter
 ```ruby
 response = conn.delete("/api/v1/shelters/<SHELTER_ID>") do |req|
   req.headers['Content-Type'] = 'application/json'
@@ -239,7 +239,7 @@ Returns
     ]
 }
 ```
-### Create
+### Create Animal
 ```ruby
 response = conn.post("/api/v1/shelters/<SHELTER_ID>/animals") do |req|
   req.headers['Content-Type'] = 'application/json'
@@ -281,7 +281,7 @@ Returns
     }
 }
 ```
-### Update
+### Update Animal
 ```ruby
 response = conn.patch("/api/v1/shelters/<SHELTER_ID>/animals/<ANIMALS_ID>") do |req|
   req.headers['Content-Type'] = 'application/json'
@@ -325,7 +325,7 @@ Returns
 ```
 NOTE: not all attributes required to Update
 
-### Delete
+### Delete Animal
 ```ruby
 response = conn.delete("/api/v1/shelters/<SHELTER_ID>/animals/<ANIMALS_ID>") do |req|
   req.headers['Content-Type'] = 'application/json'
