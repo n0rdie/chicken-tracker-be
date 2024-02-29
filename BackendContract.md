@@ -17,48 +17,54 @@ end
 ```
 
 # Shelters
-### Show one Shelter
-```ruby
-response = conn.get("/api/v1/shelters/<SHELTER_ID>") do |req|
-  req.headers['Content-Type'] = 'application/json'
-end
-JSON.parse(response.body, symbolize_names: true)
-```
-Returns
-```ruby
+### Show One Shelter
+Make a get request: `GET "/api/v1/shelters/<SHELTER_ID>"`
+
+To return:
+
+```json
 {
     "data": {
-        "id": "1",
+        "id": "7",
         "type": "shelter",
         "attributes": {
-            "name": "Red Barn",
+            "name": "magenta castle",
             "user_id": 1
         },
         "relationships": {
             "animals": {
-                "data": []
+                "data": [
+                    {
+                        "id": "2",
+                        "type": "animal"
+                    },
+                    {
+                        "id": "3",
+                        "type": "animal"
+                    },
+                    {
+                        "id": "4",
+                        "type": "animal"
+                    }
+                ]
             }
         }
     }
 }
 ```
 ### Index User's Shelters
-```ruby
-response = conn.get("/api/v1/shelters?user_id=<USER_ID>") do |req|
-  req.headers['Content-Type'] = 'application/json'
-end
-JSON.parse(response.body, symbolize_names: true)
-```
-Returns
-```ruby
+Make a get request: `GET "/api/v1/shelters?user_id=<USER_ID>"`
+
+To return:
+```json
 {
     "data": [
         {
-            "id": "1",
+            "id": "2",
             "type": "shelter",
             "attributes": {
-                "name": "Red Barn",
-                "user_id": 1
+                "name": "Purple Barn",
+                "user_id": 2
             },
             "relationships": {
                 "animals": {
@@ -67,21 +73,31 @@ Returns
             }
         },
         {
-            "id": "2",
+            "id": "1",
             "type": "shelter",
             "attributes": {
-                "name": "Blue Coop",
-                "user_id": 1
+                "name": "grey Barn",
+                "user_id": 2
             },
             "relationships": {
                 "animals": {
-                    "data": []
+                    "data": [
+                        {
+                            "id": "5",
+                            "type": "animal"
+                        },
+                        {
+                            "id": "6",
+                            "type": "animal"
+                        }
+                    ]
                 }
             }
         }
     ]
 }
 ```
+
 ### Create
 ```ruby
 response = conn.post("/api/v1/shelters") do |req|
