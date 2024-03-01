@@ -126,7 +126,7 @@ Returns nothing
 # Animals
 ### Show one Animal
 ```ruby
-response = conn.get("/api/v1/shelters/<SHELTER_ID>/animals/<ANIMALS_ID>") do |req|
+response = conn.get("/api/v1/shelters/<SHELTER_ID>/animals/<ANIMAL_ID>") do |req|
   req.headers['Content-Type'] = 'application/json'
 end
 JSON.parse(response.body, symbolize_names: true)
@@ -167,7 +167,7 @@ Returns
 ```
 ### Index Shelter's Animals
 ```ruby
-response = conn.get("/api/v1/shelters/<SHELTER_ID>/<ANIMALS_ID>") do |req|
+response = conn.get("/api/v1/shelters/<SHELTER_ID>/animals") do |req|
   req.headers['Content-Type'] = 'application/json'
 end
 JSON.parse(response.body, symbolize_names: true)
