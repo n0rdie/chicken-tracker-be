@@ -26,7 +26,9 @@ class AnimalPoro
     @diet = data[:characteristics][:diet]
     @skin_type = data[:characteristics][:skin_type]
     @top_speed = data[:characteristics][:top_speed]
-    @avg_litter = data[:characteristics][:average_clutch_size]
+    @avg_litter = if data[:characteristics][:average_clutch_size]
+    else data[:characteristics][:average_litter_size]
+    end
     @lifespan = data[:characteristics][:lifespan]
     @weight = data[:characteristics][:weight]
     @lifestyle = data[:characteristics][:lifestyle]
