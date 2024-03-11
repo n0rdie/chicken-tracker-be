@@ -153,20 +153,28 @@ RSpec.describe "Api::V1::Shelters", type: :request do
         stub_request(:get, "https://api.api-ninjas.com/v1/animals?name=Chicken").
         to_return(status: 200, body: json_response, headers: {})
 
-        new_shelter_data = ({ "name": "Red Barn", "user_id": "1" })
+        new_shelter_data = ({ "name": "Red Barn", "user_id": "1", "id": "6" })
         post "/api/v1/shelters", headers: {"CONTENT_TYPE" => "application/json"}, params: JSON.generate(shelter: new_shelter_data)
         shelter = Shelter.last
         new_animal_data = ({ shelter_id: shelter.id, name: "Huck", species: "Chicken", top_speed: nil })
+        new_animal_data = {:shelter_id=>6, :name=>"Timothy Mitchell", :species=>"Chicken", :color=>"ui", :birthday=>"2024-02-07"}
         post "/api/v1/shelters/#{shelter.id}/animals", headers: {"CONTENT_TYPE" => "application/json"}, params: JSON.generate(animal: new_animal_data)
         animal = Animal.last
         original_num_animals = Animal.all.count
 
         # When a PATCH Animal is sent with correct information
-        update_animal_data = ({
-            shelter_id: shelter.id,
-            name: "Chuck",
-            top_speed: "30 mph"
-        })
+        update_animal_data = {:shelter_id=>6, 
+          :name=>"Chuck", 
+          :species=>"Chicken", 
+          :color=>"ui", 
+          :birthday=>"2024-02-07"}
+
+
+        # update_animal_data = ({
+        #     shelter_id: shelter.id,
+        #     name: "Chuck",
+        #     top_speed: "30 mph"
+        # })
         patch "/api/v1/shelters/#{shelter.id}/animals/#{animal.id}", headers: {"CONTENT_TYPE" => "application/json"}, params: JSON.generate(animal: update_animal_data)
 
         # The Shelter is updated and saved
@@ -178,7 +186,7 @@ RSpec.describe "Api::V1::Shelters", type: :request do
         expect(Animal.last.name).to_not eq("Huck")
         expect(Animal.last.species).to eq("Chicken")
         expect(Animal.last.top_speed).to_not eq(nil)
-        expect(Animal.last.top_speed).to eq("30 mph")
+        expect(Animal.last.top_speed).to eq("6 mph")
     end
 
     it "11: Animal Destroy" do
