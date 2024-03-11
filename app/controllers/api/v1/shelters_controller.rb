@@ -3,6 +3,8 @@ class Api::V1::SheltersController < ApplicationController
     def index
         if params[:user_id]
             render json: ShelterSerializer.new(Shelter.where("user_id = #{params[:user_id]}"))
+            # render json: ShelterSerializer.new(Shelter.where("user_id = 1"))
+
         else
             render json: ShelterSerializer.new(Shelter.all)
         end
