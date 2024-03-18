@@ -3,4 +3,6 @@ class Animal < ApplicationRecord
    validates :species, presence: true
    
    belongs_to :shelter
+
+   has_one_attached :image
 end

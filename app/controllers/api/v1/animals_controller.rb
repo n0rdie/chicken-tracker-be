@@ -53,7 +53,8 @@ private
                                         :lifespan, 
                                         :weight, 
                                         :lifestyle, 
-                                        :fav_food
+                                        :fav_food,
+                                        :image
         )
     end
 end
